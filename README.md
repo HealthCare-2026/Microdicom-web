@@ -5,7 +5,7 @@
 3. ใส่คำสั่งใน command  
 
 ```bash
-git clone https://github.com/theploy67/helloDevops.git
+git clone https://github.com/HealthCare-2026/Microdicom-web.git
 ````
 
 ---
