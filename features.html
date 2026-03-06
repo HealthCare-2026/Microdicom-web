@@ -1,5 +1,72 @@
-<!-- (Functionalities + UI) -->
- <div class="card">
-    <h3>Login System</h3>
-    <p>Secure user authentication system</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MicroDicom Viewer | Features</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="components/navbar.css">
+  <link rel="stylesheet" href="components/header.css">
+  <link rel="stylesheet" href="components/footer.css">
+  <link rel="stylesheet" href="css/features.css">
+</head>
+<body class="min-h-screen">
+  <div id="header-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <section class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-4xl font-black text-gray-900 uppercase tracking-tighter">Core Features</h2>
+      <p class="text-gray-500 text-lg font-light mt-4">Key capabilities that make MicroDicom useful in education and clinical workflows.</p>
+    </section>
+
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
+        <i class="fas fa-folder-open text-blue-600 text-3xl mb-5"></i>
+        <h4 class="text-xl font-black mb-3">DICOM Import</h4>
+        <p class="text-sm text-gray-600">Open DICOM files, DICOMDIR folders, and image datasets efficiently.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
+        <i class="fas fa-ruler-combined text-green-600 text-3xl mb-5"></i>
+        <h4 class="text-xl font-black mb-3">Measurement Tools</h4>
+        <p class="text-sm text-gray-600">Supports clinical measurement workflows for analysis and teaching.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
+        <i class="fas fa-user-secret text-blue-600 text-3xl mb-5"></i>
+        <h4 class="text-xl font-black mb-3">DICOM Anonymizer</h4>
+        <p class="text-sm text-gray-600">Protects patient privacy for academic and demonstration use.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
+        <i class="fas fa-image text-purple-600 text-3xl mb-5"></i>
+        <h4 class="text-xl font-black mb-3">Image Viewing</h4>
+        <p class="text-sm text-gray-600">Provides grayscale rendering, zooming, and image enhancement support.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
+        <i class="fas fa-upload text-red-500 text-3xl mb-5"></i>
+        <h4 class="text-xl font-black mb-3">Export Functions</h4>
+        <p class="text-sm text-gray-600">Allows image and data export for reporting, sharing, and study use.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
+        <i class="fas fa-laptop-medical text-indigo-600 text-3xl mb-5"></i>
+        <h4 class="text-xl font-black mb-3">Portable Usage</h4>
+        <p class="text-sm text-gray-600">Lightweight deployment for workstations, labs, and portable storage devices.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
+</body>
+</html>

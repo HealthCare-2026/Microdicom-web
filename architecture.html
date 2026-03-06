@@ -1,14 +1,106 @@
- <!-- (Architecture & Platforms) -->
-  <section>
-    <h2>System Architecture</h2>
-    <img src="images/architecture.png" alt="Architecture Diagram">
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MicroDicom Viewer | Architecture</title>
 
-<section>
-    <h2>Platforms Supported</h2>
-    <ul>
-        <li>Web</li>
-        <li>Mobile</li>
-        <li>Cloud</li>
-    </ul>
-</section>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="components/navbar.css">
+  <link rel="stylesheet" href="components/header.css">
+  <link rel="stylesheet" href="components/footer.css">
+  <link rel="stylesheet" href="css/architecture.css">
+</head>
+<body class="min-h-screen">
+  <div id="header-container"></div>
+  <div id="navbar-container"></div>
+
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <section class="mb-16 text-center animate-on-scroll">
+      <h3 class="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase">Architecture & Platforms</h3>
+      <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mb-6"></div>
+      <p class="text-gray-500 text-lg font-light">The technical core that defines MicroDicom performance.</p>
+    </section>
+
+    <section class="grid lg:grid-cols-3 gap-10 mb-16">
+      <div class="bg-white p-8 rounded-[3rem] shadow-lg border border-gray-50 hover-card animate-on-scroll">
+        <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-blue-200">
+          <i class="fas fa-layer-group text-xl"></i>
+        </div>
+        <h4 class="text-xl font-black mb-5 text-gray-900 uppercase tracking-tighter">Standalone Logic</h4>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+          MicroDicom uses a standalone application architecture with direct system-level integration for efficient image loading.
+        </p>
+        <div class="bg-slate-50 p-5 rounded-xl border-l-4 border-blue-500">
+          <p class="text-[9px] font-black text-gray-400 uppercase mb-1.5">Portability Highlight</p>
+          <p class="text-[11px] text-gray-700 font-bold italic">Runs without full installation from portable media.</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-[3rem] shadow-lg border border-gray-50 hover-card animate-on-scroll">
+        <div class="w-14 h-14 bg-green-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-green-200">
+          <i class="fab fa-windows text-xl"></i>
+        </div>
+        <h4 class="text-xl font-black mb-5 text-gray-900 uppercase tracking-tighter">OS Environment</h4>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+          Supports modern and legacy Windows environments used in many healthcare settings.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-[3rem] shadow-lg border border-gray-50 hover-card animate-on-scroll">
+        <div class="w-14 h-14 bg-gray-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-gray-200">
+          <i class="fas fa-memory text-xl"></i>
+        </div>
+        <h4 class="text-xl font-black mb-5 text-gray-900 uppercase tracking-tighter">Hardware Profile</h4>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+          Designed to run on standard medical workstations with low hardware requirements.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 rounded-[3rem] p-12 text-white relative shadow-2xl overflow-hidden animate-on-scroll">
+      <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h3 class="text-4xl font-black mb-6 leading-tight tracking-tighter uppercase">
+            PACS Client <br><span class="text-blue-400">Integration.</span>
+          </h3>
+          <p class="text-gray-400 text-lg mb-8 leading-relaxed font-light">
+            MicroDicom connects with hospital archives through standard DICOM networking workflows.
+          </p>
+        </div>
+
+        <div class="bg-black/40 p-8 rounded-[3rem] border border-white/10 backdrop-blur-xl relative">
+          <div class="text-center mb-8">
+            <span class="bg-blue-600/30 text-blue-200 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
+              Network Logic Diagram
+            </span>
+          </div>
+          <div class="flex flex-col items-center space-y-3">
+            <div class="w-full bg-slate-800 p-4 rounded-xl text-center font-mono text-[10px] border border-blue-500/20 uppercase">
+              WORKSTATION (SCU)
+            </div>
+            <div class="h-8 w-px border-l-2 border-dashed border-gray-600"></div>
+            <div class="flex gap-3 w-full">
+              <div class="flex-1 bg-blue-900/40 p-2.5 rounded-lg text-center text-[9px] font-bold">DIMSE: PORT 104</div>
+              <div class="flex-1 bg-green-900/40 p-2.5 rounded-lg text-center text-[9px] font-bold">HTTP: PORT 8080</div>
+            </div>
+            <div class="h-8 w-px border-l-2 border-dashed border-gray-600"></div>
+            <div class="w-full bg-slate-800 p-4 rounded-xl text-center font-mono text-[10px] border border-green-500/20 uppercase">
+              PACS SERVER (SCP)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/architecture.js"></script>
+</body>
+</html>
