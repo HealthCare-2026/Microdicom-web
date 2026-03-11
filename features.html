@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,52 +15,179 @@
   <link rel="stylesheet" href="components/footer.css">
   <link rel="stylesheet" href="css/features.css">
 </head>
-<body class="min-h-screen">
+
+<body class="min-h-screen bg-slate-50">
   <div id="header-container"></div>
   <div id="navbar-container"></div>
 
-  <main class="max-w-7xl mx-auto px-6 py-12">
-    <section class="text-center mb-16 animate-on-scroll">
-      <h2 class="text-4xl font-black text-gray-900 uppercase tracking-tighter">Core Features</h2>
-      <p class="text-gray-500 text-lg font-light mt-4">Key capabilities that make MicroDicom useful in education and clinical workflows.</p>
+  <main class="max-w-7xl mx-auto px-6 py-14">
+    <section class="text-center mb-14 animate-on-scroll">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-4">
+        MicroDicom Viewer
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+        Core Features
+      </h2>
+
+      <p class="text-slate-500 text-lg font-light mt-4 max-w-3xl mx-auto leading-8">
+        ฟีเจอร์สำคัญของ MicroDicom DICOM Viewer สำหรับการดู วิเคราะห์ และจัดการภาพทางการแพทย์
+      </p>
+
+      <p class="text-center text-sm text-slate-400 mt-6">
+        Reference:
+        <a href="https://www.microdicom.com/dicom-viewer-user-manual/features.html" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline font-medium">
+          https://www.microdicom.com/
+        </a>
+      </p>
     </section>
 
-    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
-        <i class="fas fa-folder-open text-blue-600 text-3xl mb-5"></i>
-        <h4 class="text-xl font-black mb-3">DICOM Import</h4>
-        <p class="text-sm text-gray-600">Open DICOM files, DICOMDIR folders, and image datasets efficiently.</p>
+    <section class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-blue-50 text-blue-600">
+          <i class="fas fa-folder-open"></i>
+        </div>
+        <h4 class="feature-title">DICOM & DICOMDIR Import</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> เปิดและนำเข้าไฟล์ภาพทางการแพทย์ในรูปแบบ DICOM และไฟล์ DICOMDIR</p>
+          <p><span class="feature-label">Description:</span> ระบบสามารถอ่านและโหลดชุดภาพทางการแพทย์จากไฟล์ DICOM หรือโครงสร้าง DICOMDIR ที่อยู่ในโฟลเดอร์หรือสื่อจัดเก็บข้อมูล เช่น CD, DVD หรือ USB</p>
+          <p><span class="feature-label">Example:</span> ผู้ใช้สามารถเปิดภาพ CT Scan ของผู้ป่วยจากแผ่น CD ของโรงพยาบาลเพื่อดูข้อมูลการตรวจ</p>
+        </div>
       </div>
 
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
-        <i class="fas fa-ruler-combined text-green-600 text-3xl mb-5"></i>
-        <h4 class="text-xl font-black mb-3">Measurement Tools</h4>
-        <p class="text-sm text-gray-600">Supports clinical measurement workflows for analysis and teaching.</p>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-violet-50 text-violet-600">
+          <i class="fas fa-image"></i>
+        </div>
+        <h4 class="feature-title">Image Viewing Tools</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> แสดงและปรับการมองเห็นภาพทางการแพทย์</p>
+          <p><span class="feature-label">Description:</span> มีเครื่องมือสำหรับปรับภาพ เช่น Zoom, Pan, Window/Level, Brightness และ Contrast เพื่อช่วยให้มองเห็นรายละเอียดของโครงสร้างทางกายวิภาคได้ชัดเจนขึ้น</p>
+          <p><span class="feature-label">Example:</span> แพทย์ปรับค่า Window/Level ในภาพ CT เพื่อแยกความแตกต่างระหว่างกระดูกและเนื้อเยื่อ</p>
+        </div>
       </div>
 
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
-        <i class="fas fa-user-secret text-blue-600 text-3xl mb-5"></i>
-        <h4 class="text-xl font-black mb-3">DICOM Anonymizer</h4>
-        <p class="text-sm text-gray-600">Protects patient privacy for academic and demonstration use.</p>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-emerald-50 text-emerald-600">
+          <i class="fas fa-ruler-combined"></i>
+        </div>
+        <h4 class="feature-title">Measurement & Annotation</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> วัดและใส่คำอธิบายบนภาพทางการแพทย์</p>
+          <p><span class="feature-label">Description:</span> รองรับการวัดระยะทาง มุม หรือพื้นที่ รวมถึงการเพิ่มข้อความ ลูกศร และสัญลักษณ์ต่าง ๆ บนภาพ</p>
+          <p><span class="feature-label">Example:</span> แพทย์วัดขนาดของก้อนเนื้อในภาพ MRI และใส่เครื่องหมายเพื่อระบุตำแหน่งของรอยโรค</p>
+        </div>
       </div>
 
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
-        <i class="fas fa-image text-purple-600 text-3xl mb-5"></i>
-        <h4 class="text-xl font-black mb-3">Image Viewing</h4>
-        <p class="text-sm text-gray-600">Provides grayscale rendering, zooming, and image enhancement support.</p>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-cyan-50 text-cyan-600">
+          <i class="fas fa-user-secret"></i>
+        </div>
+        <h4 class="feature-title">DICOM Anonymizer</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> ลบหรือซ่อนข้อมูลส่วนบุคคลของผู้ป่วย</p>
+          <p><span class="feature-label">Description:</span> เครื่องมือนี้ช่วยปกป้องความเป็นส่วนตัวของผู้ป่วย โดยการลบข้อมูลที่สามารถระบุตัวตนได้ เช่น ชื่อผู้ป่วยหรือรหัสผู้ป่วย</p>
+          <p><span class="feature-label">Example:</span> ก่อนนำภาพไปใช้ในการสอนหรือวิจัย สามารถลบข้อมูลผู้ป่วยออกจากไฟล์ DICOM</p>
+        </div>
       </div>
 
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
-        <i class="fas fa-upload text-red-500 text-3xl mb-5"></i>
-        <h4 class="text-xl font-black mb-3">Export Functions</h4>
-        <p class="text-sm text-gray-600">Allows image and data export for reporting, sharing, and study use.</p>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-indigo-50 text-indigo-600">
+          <i class="fas fa-tags"></i>
+        </div>
+        <h4 class="feature-title">DICOM Tag Viewing & Editing</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> ดูและแก้ไขข้อมูล Metadata ของไฟล์ DICOM</p>
+          <p><span class="feature-label">Description:</span> ผู้ใช้สามารถตรวจสอบข้อมูลสำคัญของภาพ เช่น Patient ID, Modality, Study Date และรายละเอียดการตรวจ</p>
+          <p><span class="feature-label">Example:</span> นักวิจัยตรวจสอบข้อมูลวันที่ตรวจและประเภทเครื่องมือที่ใช้สร้างภาพ</p>
+        </div>
       </div>
 
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg hover-card animate-on-scroll">
-        <i class="fas fa-laptop-medical text-indigo-600 text-3xl mb-5"></i>
-        <h4 class="text-xl font-black mb-3">Portable Usage</h4>
-        <p class="text-sm text-gray-600">Lightweight deployment for workstations, labs, and portable storage devices.</p>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-rose-50 text-rose-500">
+          <i class="fas fa-file-export"></i>
+        </div>
+        <h4 class="feature-title">Export</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> ส่งออกข้อมูลภาพทางการแพทย์ไปยังรูปแบบอื่น</p>
+          <p><span class="feature-label">Description:</span> สามารถแปลงไฟล์ DICOM ไปเป็นรูปภาพ วิดีโอ หรือไฟล์ข้อมูล เช่น JPEG, PNG หรือ CSV เพื่อใช้ในการรายงานหรือการนำเสนอ</p>
+          <p><span class="feature-label">Example:</span> แปลงภาพ CT Scan เป็นไฟล์ PNG เพื่อนำไปใส่ในรายงานทางการแพทย์</p>
+        </div>
       </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-orange-50 text-orange-500">
+          <i class="fas fa-cube"></i>
+        </div>
+        <h4 class="feature-title">Multi-Planar Reconstruction</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> แสดงภาพในหลายระนาบของร่างกาย</p>
+          <p><span class="feature-label">Description:</span> สามารถสร้างมุมมองภาพในระนาบต่าง ๆ เช่น Axial, Sagittal และ Coronal เพื่อช่วยให้เห็นโครงสร้างของอวัยวะได้ครบถ้วน</p>
+          <p><span class="feature-label">Example:</span> แพทย์ดูภาพสมองจากหลายมุมเพื่อช่วยในการวินิจฉัยโรค</p>
+        </div>
+      </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-pink-50 text-pink-600">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <h4 class="feature-title">Image Fusion</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> รวมข้อมูลจากภาพทางการแพทย์หลายประเภท</p>
+          <p><span class="feature-label">Description:</span> ช่วยรวมภาพจากการตรวจต่างชนิด เช่น PET และ CT เพื่อให้เห็นทั้งโครงสร้างของอวัยวะและข้อมูลการทำงานของเซลล์</p>
+          <p><span class="feature-label">Example:</span> ใช้ตรวจหาตำแหน่งของเซลล์มะเร็งโดยดูจากภาพ PET-CT</p>
+        </div>
+      </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-emerald-50 text-emerald-600">
+          <i class="fas fa-database"></i>
+        </div>
+        <h4 class="feature-title">Local Database</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> จัดเก็บและจัดการชุดภาพ DICOM ภายในเครื่อง</p>
+          <p><span class="feature-label">Description:</span> สามารถนำเข้าภาพจากแหล่งต่าง ๆ เช่น CD, USB หรือโฟลเดอร์ในเครื่อง แล้วจัดเก็บไว้ในฐานข้อมูลภายในเพื่อค้นหาได้ง่าย</p>
+          <p><span class="feature-label">Example:</span> โรงพยาบาลสามารถเก็บภาพตรวจของผู้ป่วยหลายรายไว้ในระบบเพื่อเปิดดูภายหลัง</p>
+        </div>
+      </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-sky-50 text-sky-600">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <h4 class="feature-title">PACS & DICOMweb Connectivity</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> เชื่อมต่อกับระบบจัดเก็บภาพทางการแพทย์ (PACS)</p>
+          <p><span class="feature-label">Description:</span> สามารถค้นหา ดาวน์โหลด และส่งภาพทางการแพทย์ผ่านเครือข่ายด้วยโปรโตคอล DICOM และ DICOMweb</p>
+          <p><span class="feature-label">Example:</span> แพทย์สามารถดึงภาพ MRI จากเซิร์ฟเวอร์ PACS ของโรงพยาบาลมาเปิดดูได้ทันที</p>
+        </div>
+      </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-amber-50 text-amber-500">
+          <i class="fas fa-columns"></i>
+        </div>
+        <h4 class="feature-title">Image Comparison</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> เปรียบเทียบภาพหลายภาพพร้อมกัน</p>
+          <p><span class="feature-label">Description:</span> สามารถแสดงภาพหลายชุดในหน้าจอเดียวแบบแบ่งหน้าจอ เพื่อเปรียบเทียบภาพจากการตรวจต่างช่วงเวลา</p>
+          <p><span class="feature-label">Example:</span> เปรียบเทียบภาพ X-ray ของผู้ป่วยก่อนและหลังการรักษา</p>
+        </div>
+      </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon bg-teal-50 text-teal-600">
+          <i class="fas fa-video"></i>
+        </div>
+        <h4 class="feature-title">Cine Loop Playback</h4>
+        <div class="feature-body">
+          <p><span class="feature-label">Feature:</span> แสดงภาพแบบต่อเนื่องเหมือนวิดีโอ</p>
+          <p><span class="feature-label">Description:</span> ระบบสามารถเล่นภาพหลาย slice ต่อเนื่องกัน เพื่อดูการเคลื่อนไหวหรือการเปลี่ยนแปลงของภาพทางการแพทย์</p>
+          <p><span class="feature-label">Example:</span> ใช้ดูภาพ ultrasound หรือเลื่อนดูภาพ CT scan ทีละชั้นอย่างต่อเนื่อง</p>
+        </div>
+      </div>
+
     </section>
   </main>
 
@@ -69,4 +197,5 @@
   <script src="js/main.js"></script>
   <script src="js/features.js"></script>
 </body>
+
 </html>
