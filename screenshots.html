@@ -14,115 +14,184 @@
   <link rel="stylesheet" href="components/footer.css">
   <link rel="stylesheet" href="css/screenshots.css">
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen text-slate-800">
   <div id="header-container"></div>
   <div id="navbar-container"></div>
 
+  <!-- Full-screen Modal -->
+  <div
+    id="fullscreen-modal"
+    class="fullscreen-modal hidden"
+    aria-hidden="true"
+  >
+    <button
+      id="fullscreen-close"
+      class="fullscreen-close"
+      type="button"
+      aria-label="Close fullscreen image"
+    >
+      <i class="fas fa-times"></i>
+    </button>
+
+    <img
+      id="modal-image"
+      src=""
+      alt="Fullscreen preview"
+      class="modal-image scale-95 opacity-0"
+    >
+
+    <div class="fullscreen-hint">
+      Click anywhere or press ESC to close
+    </div>
+  </div>
+
   <main class="max-w-7xl mx-auto px-6 py-12">
-    <section class="grid lg:grid-cols-4 gap-12 items-start mb-20">
-      <div class="lg:col-span-1 space-y-10 animate-on-scroll">
-        <div>
-          <h3 class="text-3xl font-black text-gray-900 mb-5 tracking-tighter uppercase">Three-Pane Layout Logic.</h3>
-          <p class="text-gray-600 text-xs leading-relaxed mb-6">
-            A highly optimized workspace designed for clinical accuracy and rapid data inspection.
+    <section class="grid lg:grid-cols-12 gap-10 items-start mb-24">
+      <div class="lg:col-span-4 space-y-4">
+        <div class="mb-8">
+          <h2 class="text-4xl font-black text-slate-900 tracking-tighter uppercase leading-tight">
+            SCREEN<br>Shots.
+          </h2>
+          <p class="text-slate-500 text-sm mt-2">
+            orthanc สามารถแสดงผลลัพธ์จากฟังก์ชันต่างๆได้ดังนี้
           </p>
-
-          <div class="space-y-5">
-            <div class="flex items-center space-x-4">
-              <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">1</div>
-              <div>
-                <h5 class="font-bold text-gray-900 text-sm">Patient Browser</h5>
-                <p class="text-[9px] text-gray-500 uppercase font-bold tracking-tighter">Left: Study Tree</p>
-              </div>
-            </div>
-
-            <div class="flex items-center space-x-4">
-              <div class="w-10 h-10 bg-green-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">2</div>
-              <div>
-                <h5 class="font-bold text-gray-900 text-sm">Main Viewer</h5>
-                <p class="text-[9px] text-gray-500 uppercase font-bold tracking-tighter">Center: Clinical HUD</p>
-              </div>
-            </div>
-
-            <div class="flex items-center space-x-4">
-              <div class="w-10 h-10 bg-gray-900 text-white rounded-xl flex items-center justify-center font-bold text-lg">3</div>
-              <div>
-                <h5 class="font-bold text-gray-900 text-sm">Tag Pane</h5>
-                <p class="text-[9px] text-gray-500 uppercase font-bold tracking-tighter">Right: Metadata</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="bg-white p-6 rounded-[2.5rem] shadow-lg border border-gray-100">
-          <h6 class="text-[9px] font-black text-blue-600 uppercase mb-5 tracking-widest">Interactive Engine</h6>
-          <div class="grid gap-3">
-            <button onclick="applyFilter('grayscale(100%) brightness(1.8) contrast(1.6)')" class="w-full py-3 bg-slate-50 text-[9px] font-black rounded-xl hover:bg-blue-600 hover:text-white transition-all uppercase tracking-widest border border-slate-100">Bone Preset</button>
-            <button onclick="applyFilter('grayscale(100%) invert(100%)')" class="w-full py-3 bg-slate-50 text-[9px] font-black rounded-xl hover:bg-blue-600 hover:text-white transition-all uppercase tracking-widest border border-slate-100">Invert Film</button>
-            <button onclick="applyFilter('grayscale(100%) contrast(1.1) brightness(1.2)')" class="w-full py-3 bg-gray-900 text-white text-[9px] font-black rounded-xl uppercase tracking-widest mt-2">Reset View</button>
-          </div>
-        </div>
+        <div class="space-y-2" id="step-menu">
+  <button onclick="changeMainTopic(0)" class="step-btn active w-full flex items-center p-4 rounded-2xl border-2 transition-all bg-white border-blue-600 shadow-md group" id="btn-0">
+    <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mr-4">1</div>
+    <div class="text-left">
+      <h4 class="font-bold text-sm text-slate-900">1. Orthanc Overview</h4>
+      <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">System Architecture</p>
+    </div>
+  </button>
+
+  <button onclick="changeMainTopic(1)" class="step-btn w-full flex items-center p-4 rounded-2xl border-2 border-transparent transition-all hover:bg-white hover:shadow-sm group" id="btn-1">
+    <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center font-bold mr-4 group-hover:bg-blue-600 group-hover:text-white">2</div>
+    <div class="text-left">
+      <h4 class="font-bold text-sm text-slate-900">2. Web Interface</h4>
+      <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Patient / Study / Series</p>
+    </div>
+  </button>
+
+  <button onclick="changeMainTopic(2)" class="step-btn w-full flex items-center p-4 rounded-2xl border-2 border-transparent transition-all hover:bg-white hover:shadow-sm group" id="btn-2">
+    <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center font-bold mr-4 group-hover:bg-blue-600 group-hover:text-white">3</div>
+    <div class="text-left">
+      <h4 class="font-bold text-sm text-slate-900">3. Upload / Receive DICOM</h4>
+      <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Import & Storage</p>
+    </div>
+  </button>
+
+  <button onclick="changeMainTopic(3)" class="step-btn w-full flex items-center p-4 rounded-2xl border-2 border-transparent transition-all hover:bg-white hover:shadow-sm group" id="btn-3">
+    <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center font-bold mr-4 group-hover:bg-blue-600 group-hover:text-white">4</div>
+    <div class="text-left">
+      <h4 class="font-bold text-sm text-slate-900">4. DICOM Communication</h4>
+      <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">C-STORE Workflow</p>
+    </div>
+  </button>
+
+  <button onclick="changeMainTopic(4)" class="step-btn w-full flex items-center p-4 rounded-2xl border-2 border-transparent transition-all hover:bg-white hover:shadow-sm group" id="btn-4">
+    <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center font-bold mr-4 group-hover:bg-blue-600 group-hover:text-white">5</div>
+    <div class="text-left">
+      <h4 class="font-bold text-sm text-slate-900">5. REST API</h4>
+      <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">JSON Endpoints</p>
+    </div>
+  </button>
+
+  <button onclick="changeMainTopic(5)" class="step-btn w-full flex items-center p-4 rounded-2xl border-2 border-transparent transition-all hover:bg-white hover:shadow-sm group" id="btn-5">
+    <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center font-bold mr-4 group-hover:bg-blue-600 group-hover:text-white">6</div>
+    <div class="text-left">
+      <h4 class="font-bold text-sm text-slate-900">6. Plugin / Integration</h4>
+      <p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Extensions & External Apps</p>
+    </div>
+  </button>
+</div>
       </div>
 
-      <div class="lg:col-span-3 animate-on-scroll">
-        <div class="bg-[#000d1a] rounded-[3rem] p-3 overflow-hidden shadow-3xl relative aspect-video flex items-center justify-center border-[10px] border-gray-900">
-          <div class="scan-bar"></div>
-          <img id="main-render" src="images/viewer.jpg" alt="Viewer screenshot" class="max-h-full grayscale transition-all duration-1000">
+      <div class="lg:col-span-8">
+        <div class="viewer-container">
+          <div class="bg-slate-100 border-b border-slate-200 p-4 flex justify-between items-center">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+              <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+              <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+            </div>
 
-          <div class="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none opacity-60">
-            <div class="flex justify-between items-start">
-              <div class="bg-black/50 backdrop-blur-md p-3 rounded-lg border border-white/10">
-                <p class="text-[9px] font-mono text-blue-400 font-bold mb-0.5 uppercase">DICOM_HEADER</p>
-                <p class="text-[10px] font-mono text-white">ID: 99420-X<br>NAME: ANONYMIZED</p>
-              </div>
-              <div class="text-right bg-black/50 backdrop-blur-md p-3 rounded-lg border border-white/10">
-                <p class="text-[9px] font-mono text-green-400 font-bold mb-0.5 uppercase">VIEWPORT_1</p>
-                <p class="text-[10px] font-mono text-white">WW: 350 / WL: 40<br>ZOOM: 100%</p>
-              </div>
+            <div id="display-title" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+              TOPIC: ORTHANC OVERVIEW
+            </div>
+
+            <div class="text-[10px] font-bold text-blue-500 uppercase" id="image-counter">
+              IMAGE 1/1
             </div>
           </div>
+
+          <div class="output-frame">
+            <button id="arrow-prev" class="nav-arrow left" type="button" aria-label="Previous image">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <button id="arrow-next" class="nav-arrow right" type="button" aria-label="Next image">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div id="dot-indicators" class="indicator-dots"></div>
+
+            <div id="image-content-area" class="w-full h-full flex items-center justify-center overflow-hidden">
+              <!-- Images injected by JS -->
+            </div>
+          </div>
+        </div>
+
+        <div class="explanation-block">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-2 h-6 bg-blue-600 rounded-full"></div>
+            <h5 class="text-sm font-black text-slate-900 uppercase tracking-tight">
+              Technical Explanation
+            </h5>
+          </div>
+
+          <p id="technical-desc" class="text-[14px] text-slate-600 leading-relaxed">
+            Orthanc คือ DICOM Server ขนาดเล็กแต่ทรงพลังที่ถูกออกแบบมาเพื่อการบริหารจัดการข้อมูลภาพทางการแพทย์ในระดับมาตรฐานสากล
+          </p>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="mb-16 text-center animate-on-scroll">
-        <h3 class="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase">Simulation Results</h3>
-        <div class="h-1.5 w-24 bg-green-500 mx-auto rounded-full mb-6"></div>
-        <p class="text-gray-500 text-lg font-light">Documented data validation process.</p>
+      <div class="mb-12 text-center">
+        <h3 class="text-4xl font-black text-slate-900 tracking-tighter uppercase">Presentation Guide</h3>
+        <p class="text-slate-500 text-sm mt-2 uppercase tracking-widest font-bold italic">
+          "Watch the demo & follow the script"
+        </p>
+        <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mt-4"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="group bg-white rounded-[3rem] overflow-hidden shadow-lg border border-gray-50 hover-card animate-on-scroll">
-          <div class="bg-slate-900 h-56 flex items-center justify-center relative overflow-hidden">
-            <i class="fas fa-file-import text-6xl text-blue-500/30"></i>
-          </div>
-          <div class="p-8">
-            <div class="text-[9px] font-black text-blue-600 mb-3 uppercase tracking-widest">Verification #1</div>
-            <h5 class="text-xl font-black text-gray-900 mb-3">Testing Image Import</h5>
-            <p class="text-xs text-gray-500 leading-relaxed italic">Validation of DICOM loading workflow.</p>
-          </div>
-        </div>
+      <div class="space-y-12">
+        <div class="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100 grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <div class="flex items-center space-x-4">
+              <span class="w-12 h-12 bg-blue-100 text-blue-600 flex items-center justify-center font-black rounded-2xl text-xl shadow-inner">01</span>
+              <h4 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Introduction</h4>
+            </div>
 
-        <div class="group bg-white rounded-[3rem] overflow-hidden shadow-lg border border-gray-50 hover-card animate-on-scroll">
-          <div class="bg-slate-900 h-56 flex items-center justify-center relative overflow-hidden">
-            <i class="fas fa-ruler-combined text-6xl text-green-500/30"></i>
+            <div class="space-y-4">
+              <div class="p-5 bg-slate-50 rounded-2xl border-l-4 border-blue-600">
+                <p class="text-slate-600 text-sm leading-relaxed italic">
+                  <!-- <span class="font-bold text-slate-900 not-italic">Script:</span> -->
+                  "Orthanc ซึ่งเป็นระบบ DICOM Server ที่มีความยืดหยุ่นสูงมาก เหมาะสำหรับการทำ mini-PACS ในองค์กร"
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="p-8">
-            <div class="text-[9px] font-black text-green-600 mb-3 uppercase tracking-widest">Verification #2</div>
-            <h5 class="text-xl font-black text-gray-900 mb-3">Measurement Tools</h5>
-            <p class="text-xs text-gray-500 leading-relaxed italic">Evaluation of integrated measurement support.</p>
-          </div>
-        </div>
 
-        <div class="group bg-white rounded-[3rem] overflow-hidden shadow-lg border border-gray-50 hover-card animate-on-scroll">
-          <div class="bg-slate-900 h-56 flex items-center justify-center relative overflow-hidden">
-            <i class="fas fa-user-secret text-6xl text-blue-500/30"></i>
-          </div>
-          <div class="p-8">
-            <div class="text-[9px] font-black text-blue-600 mb-3 uppercase tracking-widest">Verification #3</div>
-            <h5 class="text-xl font-black text-gray-900 mb-3">Exporting Anonymized Data</h5>
-            <p class="text-xs text-gray-500 leading-relaxed italic">Checking privacy-safe export workflow.</p>
+          <div class="lg:col-span-7">
+            <div class="video-container shadow-2xl">
+              <video controls poster="images/output1.png">
+                <source src="vdo/demo-orthanc.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </div>
