@@ -15,31 +15,277 @@
   <link rel="stylesheet" href="css/about.css">
 </head>
 <body class="min-h-screen">
+  <div id="preloader">
+    <div class="relative text-center">
+      <div class="scan-bar"></div>
+      <p class="text-xs uppercase tracking-[0.4em] text-blue-200 font-bold">Loading interface support</p>
+      <h2 class="text-3xl font-black tracking-tight mt-3">MicroDicom Viewer</h2>
+      <p class="text-sm text-blue-100/80 mt-2">Preparing guided project presentation...</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
   <div id="header-container"></div>
   <div id="navbar-container"></div>
 
-  <main class="max-w-7xl mx-auto px-6 py-12">
-    <section class="text-center mb-16 animate-on-scroll">
-      <h2 class="text-4xl font-black text-gray-900 uppercase tracking-tighter">About This Project</h2>
-      <p class="text-gray-500 text-lg font-light mt-4">
-        A technical portfolio page for presenting MicroDicom Viewer concepts, features, and workflow.
-      </p>
+  <main class="about-page max-w-7xl mx-auto px-6 py-10 md:py-14">
+    <section class="about-hero animate-on-scroll">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <i class="fas fa-circle-info"></i>
+            About this presentation
+          </span>
+
+          <h2 class="hero-title">
+            User Interface Support that makes the presentation easy to explore, read, and understand.
+          </h2>
+
+          <p class="hero-desc">
+            This page explains how the web presentation supports users through clear navigation, readable layouts,
+            visual guidance, and responsive interaction patterns across the MicroDicom Viewer documentation.
+          </p>
+
+          <div class="hero-tags">
+            <span>Navigation clarity</span>
+            <span>Readable sections</span>
+            <span>Guided interactions</span>
+            <span>Presentation support</span>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <img src="images/about_orthanc.png" alt="" loading="lazy">
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-shell">
+            <div class="panel-topbar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="panel-content">
+              <div class="signal-card pulse-soft">
+                <p>Interface Health</p>
+                <h3><span class="counter" data-target="96">0</span>%</h3>
+                <small>Guided presentation readiness</small>
+              </div>
+
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <i class="fas fa-compass"></i>
+                  <strong>5</strong>
+                  <span>Main Sections</span>
+                </div>
+
+                <div class="mini-card">
+                  <i class="fas fa-hand-pointer"></i>
+                  <strong>4</strong>
+                  <span>Support Modes</span>
+                </div>
+
+                <div class="mini-card">
+                  <i class="fas fa-images"></i>
+                  <strong>Rich</strong>
+                  <span>Visual Guidance</span>
+                </div>
+
+                <div class="mini-card">
+                  <i class="fas fa-shield-heart"></i>
+                  <strong>Clear</strong>
+                  <span>User Focus</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg animate-on-scroll">
-        <h3 class="text-2xl font-black text-blue-600 mb-4">Project Summary</h3>
-        <p class="text-gray-600 leading-relaxed">
-          This website presents an overview of MicroDicom Viewer, including architecture, user interface, and key medical imaging features.
-        </p>
+    <section id="support-highlights" class="support-overview animate-on-scroll">
+      <div class="section-heading">
+        <span class="section-kicker">Interface support overview</span>
+        <h3>Core support areas designed into this page</h3>
+        <p>Each block below shows how the presentation helps users move through content without confusion.</p>
       </div>
 
-      <div class="bg-white p-8 rounded-[2rem] shadow-lg animate-on-scroll">
-        <h3 class="text-2xl font-black text-green-600 mb-4">Technology Stack</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Built with HTML, Tailwind CSS, Font Awesome, and JavaScript for modular multi-page presentation.
-        </p>
+      <div class="support-grid">
+        <article class="support-card hover-card support-card-active" data-support="navigation">
+          <div class="support-icon icon-blue">
+            <i class="fas fa-route"></i>
+          </div>
+          <h4>Navigation Support</h4>
+          <p>
+            Sticky navigation, clear page names, and active states help users know where they are and where to go next.
+          </p>
+          <ul>
+            <li>Top navigation bar</li>
+            <li>Current page highlighting</li>
+            <li>Fast section jump actions</li>
+          </ul>
+        </article>
+
+        <article class="support-card hover-card" data-support="readability">
+          <div class="support-icon icon-green">
+            <i class="fas fa-book-open-reader"></i>
+          </div>
+          <h4>Readability Support</h4>
+          <p>
+            Structured headings, balanced spacing, and contrast-rich cards make the content easier to scan and present.
+          </p>
+          <ul>
+            <li>Clear visual hierarchy</li>
+            <li>Comfortable text spacing</li>
+            <li>Readable summary blocks</li>
+          </ul>
+        </article>
+
+        <article class="support-card hover-card" data-support="visual">
+          <div class="support-icon icon-purple">
+            <i class="fas fa-wand-magic-sparkles"></i>
+          </div>
+          <h4>Visual Support</h4>
+          <p>
+            Icons, badges, gradients, and dashboard-style panels help users understand the purpose of each section quickly.
+          </p>
+          <ul>
+            <li>Icon-based recognition</li>
+            <li>Status panels</li>
+            <li>Presentation-style emphasis</li>
+          </ul>
+        </article>
+
+        <article class="support-card hover-card" data-support="interaction">
+          <div class="support-icon icon-orange">
+            <i class="fas fa-computer-mouse"></i>
+          </div>
+          <h4>Interaction Support</h4>
+          <p>
+            Hover states, focused highlights, and smooth animation provide feedback so the interface feels responsive and alive.
+          </p>
+          <ul>
+            <li>Hover feedback</li>
+            <li>Animated reveal</li>
+            <li>Focused support highlight</li>
+          </ul>
+        </article>
       </div>
+    </section>
+
+    <section class="ui-showcase animate-on-scroll">
+      <div class="section-heading compact">
+        <span class="section-kicker">Guided explanation</span>
+        <h3>How the interface supports the user during a presentation</h3>
+      </div>
+
+      <div class="showcase-layout">
+        <div class="showcase-tabs" role="tablist" aria-label="User interface support tabs">
+          <button class="showcase-tab active" data-target="panel-1" type="button">
+            <i class="fas fa-layer-group"></i>
+            Layout Guidance
+          </button>
+
+          <button class="showcase-tab" data-target="panel-2" type="button">
+            <i class="fas fa-circle-nodes"></i>
+            Content Flow
+          </button>
+
+          <button class="showcase-tab" data-target="panel-3" type="button">
+            <i class="fas fa-sliders"></i>
+            User Feedback
+          </button>
+        </div>
+
+        <div class="showcase-panels">
+          <article id="panel-1" class="showcase-panel active">
+            <span class="showcase-label">Layout Guidance</span>
+            <h4>Information is separated into visible, manageable sections.</h4>
+            <p>
+              The page is built like a polished presentation board: a large hero area introduces the topic,
+              support cards explain the core ideas, and an interactive showcase expands each concept clearly.
+            </p>
+
+            <div class="showcase-points">
+              <span><i class="fas fa-check"></i> Hero section for quick context</span>
+              <span><i class="fas fa-check"></i> Card layout for chunked reading</span>
+              <span><i class="fas fa-check"></i> Consistent spacing between groups</span>
+            </div>
+          </article>
+
+          <article id="panel-2" class="showcase-panel">
+            <span class="showcase-label">Content Flow</span>
+            <h4>Users can understand the story of the website from top to bottom.</h4>
+            <p>
+              Headings, short paragraphs, and highlighted keywords direct the audience through the content in a sequence
+              that supports both self-reading and live presentation.
+            </p>
+
+            <div class="showcase-points">
+              <span><i class="fas fa-check"></i> Strong headline hierarchy</span>
+              <span><i class="fas fa-check"></i> Summary-first writing style</span>
+              <span><i class="fas fa-check"></i> Easy talking points for presenter</span>
+            </div>
+          </article>
+
+          <article id="panel-3" class="showcase-panel">
+            <span class="showcase-label">User Feedback</span>
+            <h4>The interface reacts when users interact, reducing uncertainty.</h4>
+            <p>
+              Buttons, tabs, and cards provide motion and state changes that tell users where to click,
+              what is selected, and which part of the interface is currently active.
+            </p>
+
+            <div class="showcase-points">
+              <span><i class="fas fa-check"></i> Hover and active states</span>
+              <span><i class="fas fa-check"></i> Focused support mode</span>
+              <span><i class="fas fa-check"></i> Smooth transitions for clarity</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-summary-grid animate-on-scroll">
+      <article class="summary-card large hover-card">
+        <div class="summary-header">
+          <span class="section-kicker">Project Summary</span>
+          <i class="fas fa-file-waveform"></i>
+        </div>
+
+        <h3>What this project page is meant to communicate</h3>
+        <p>
+          This web presentation introduces MicroDicom Viewer as a technical portfolio topic by explaining its architecture,
+          features, screenshots, and support design in a way that is visually professional and easy for viewers to follow.
+        </p>
+      </article>
+
+      <article class="summary-card hover-card">
+        <div class="summary-header">
+          <span class="section-kicker">Technology Stack</span>
+          <i class="fas fa-code"></i>
+        </div>
+
+        <h3>Built for modular presentation</h3>
+        <p>
+          HTML structures the content, Tailwind utility classes enhance layout speed, custom CSS refines style,
+          and JavaScript adds page loading, interaction, and interface highlighting behavior.
+        </p>
+      </article>
+
+      <article class="summary-card hover-card emphasis-card">
+        <div class="summary-header">
+          <span class="section-kicker">Presenter Note</span>
+          <i class="fas fa-microphone-lines"></i>
+        </div>
+
+        <h3>Why this page works well in a live demo</h3>
+        <p>
+          The design is not only informative but also presentation-ready: it gives quick talking points,
+          strong visuals, and guided emphasis that help the presenter explain UI support with confidence.
+        </p>
+      </article>
     </section>
   </main>
 
