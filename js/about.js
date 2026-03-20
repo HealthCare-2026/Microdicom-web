@@ -10,7 +10,7 @@ function initCounters() {
   counters.forEach((counter) => {
     const target = Number(counter.dataset.target || 0);
     let value = 0;
-    const step = Math.max(1, Math.ceil(target / 40));
+    const step = Math.max(1, Math.ceil(target / 20));
 
     const update = () => {
       value += step;

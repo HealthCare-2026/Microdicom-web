@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MicroDicom Viewer | About</title>
+  <title>Orthanc DICOM Server | About</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,9 +18,9 @@
   <div id="preloader">
     <div class="relative text-center">
       <div class="scan-bar"></div>
-      <p class="text-xs uppercase tracking-[0.4em] text-blue-200 font-bold">Loading interface support</p>
-      <h2 class="text-3xl font-black tracking-tight mt-3">MicroDicom Viewer</h2>
-      <p class="text-sm text-blue-100/80 mt-2">Preparing guided project presentation...</p>
+      <p class="text-xs uppercase tracking-[0.4em] text-blue-200 font-bold">กำลังโหลดข้อมูลInterface</p>
+      <h2 class="text-3xl font-black tracking-tight mt-3">Orthanc DICOM Server</h2>
+      <p class="text-sm text-blue-100/80 mt-2">กำลังเตรียมหน้าแนะนำระบบจัดเก็บภาพทางการแพทย์...</p>
       <div class="loader-bar"><div class="loader-fill"></div></div>
     </div>
   </div>
@@ -30,145 +30,110 @@
 
   <main class="about-page max-w-7xl mx-auto px-6 py-10 md:py-14">
     <section class="about-hero animate-on-scroll">
-      <div class="hero-grid">
+      <div class="hero-grid hero-grid-side-image">
         <div class="hero-copy">
           <span class="eyebrow">
             <i class="fas fa-circle-info"></i>
-            About this presentation
+            เกี่ยวกับหน้านี้
           </span>
 
           <h2 class="hero-title">
-            User Interface Support that makes the presentation easy to explore, read, and understand.
+            Interfaces ที่ Orthanc รองรับสำหรับการเข้าถึงและจัดการข้อมูล DICOM
           </h2>
 
           <p class="hero-desc">
-            This page explains how the web presentation supports users through clear navigation, readable layouts,
-            visual guidance, and responsive interaction patterns across the MicroDicom Viewer documentation.
+            หน้านี้ใช้สำหรับอธิบายว่า Orthanc ในฐานะ DICOM server และ medical image archive
+            รองรับการเข้าถึงข้อมูลภาพทางการแพทย์ผ่าน Interfaces รูปแบบใดบ้าง
+            เพื่อให้ผู้ใช้และนักพัฒนาสามารถเรียกดู จัดการ และเชื่อมต่อข้อมูล DICOM ได้อย่างเหมาะสม
           </p>
 
           <div class="hero-tags">
-            <span>Navigation clarity</span>
-            <span>Readable sections</span>
-            <span>Guided interactions</span>
-            <span>Presentation support</span>
-          </div>
-
-          <div class="hero-visual" aria-hidden="true">
-            <img src="images/about_orthanc.png" alt="" loading="lazy">
+            <span>Medical image browsing</span>
+            <span>DICOM data management</span>
+            <span>Medical image access</span>
+            <span>Orthanc DICOM Server</span>
           </div>
         </div>
 
-        <div class="hero-panel">
-          <div class="panel-shell">
-            <div class="panel-topbar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div class="panel-content">
-              <div class="signal-card pulse-soft">
-                <p>Interface Health</p>
-                <h3><span class="counter" data-target="96">0</span>%</h3>
-                <small>Guided presentation readiness</small>
-              </div>
-
-              <div class="mini-grid">
-                <div class="mini-card">
-                  <i class="fas fa-compass"></i>
-                  <strong>5</strong>
-                  <span>Main Sections</span>
-                </div>
-
-                <div class="mini-card">
-                  <i class="fas fa-hand-pointer"></i>
-                  <strong>4</strong>
-                  <span>Support Modes</span>
-                </div>
-
-                <div class="mini-card">
-                  <i class="fas fa-images"></i>
-                  <strong>Rich</strong>
-                  <span>Visual Guidance</span>
-                </div>
-
-                <div class="mini-card">
-                  <i class="fas fa-shield-heart"></i>
-                  <strong>Clear</strong>
-                  <span>User Focus</span>
-                </div>
-              </div>
-            </div>
+        <div class="hero-media">
+          <div class="hero-visual hero-visual-large" aria-hidden="true">
+            <img src="images/about_orthanc.png" alt="Orthanc built-in web interface" loading="lazy">
           </div>
+          <p class="hero-caption">
+            ตัวอย่างหน้าจอ <strong>Web Interface ของ Orthanc</strong> สำหรับเรียกดูข้อมูล DICOM ผ่านเว็บเบราว์เซอร์
+          </p>
         </div>
       </div>
     </section>
 
     <section id="support-highlights" class="support-overview animate-on-scroll">
       <div class="section-heading">
-        <span class="section-kicker">Interface support overview</span>
-        <h3>Core support areas designed into this page</h3>
-        <p>Each block below shows how the presentation helps users move through content without confusion.</p>
+        <span class="section-kicker">User Interfaces Supported</span>
+        <h3>Interfaces ที่ Orthanc รองรับ</h3>
+        <p>
+          Orthanc เป็น DICOM server และ medical image archive ที่รองรับการเข้าถึงข้อมูลภาพทางการแพทย์ได้หลายรูปแบบ
+          โดยแบ่งออกเป็น 3 Interfaces หลักดังนี้
+          <sup><a href="#ref-1" class="ref-link">[1]</a></sup>
+        </p>
       </div>
 
-      <div class="support-grid">
-        <article class="support-card hover-card support-card-active" data-support="navigation">
+      <div class="support-grid support-grid-3">
+        <article class="support-card hover-card support-card-active" data-support="web">
           <div class="support-icon icon-blue">
-            <i class="fas fa-route"></i>
+            <i class="fas fa-globe"></i>
           </div>
-          <h4>Navigation Support</h4>
+          <h4>1. Web Interface</h4>
           <p>
-            Sticky navigation, clear page names, and active states help users know where they are and where to go next.
+            Orthanc provides a built-in web interface (accessible at port <code>8042</code> by default)
+            that allows users to browse patients, studies, series, and instances stored in the DICOM server.
+            Users can search patient records and view DICOM metadata directly through a browser
+            without any additional software installation.
+            <sup><a href="#ref-2" class="ref-link">[2]</a></sup>
           </p>
           <ul>
-            <li>Top navigation bar</li>
-            <li>Current page highlighting</li>
-            <li>Fast section jump actions</li>
+            <li>เรียกดูข้อมูลผู้ป่วยและรายการตรวจผ่านเบราว์เซอร์</li>
+            <li>ค้นหา patients, studies, series และ instances ได้</li>
+            <li>ดู DICOM metadata ได้จากหน้าเว็บโดยตรง</li>
+            <li>เข้าถึงได้ที่ <code>http://localhost:8042</code> (default port)</li>
           </ul>
         </article>
 
-        <article class="support-card hover-card" data-support="readability">
+        <article class="support-card hover-card" data-support="api">
           <div class="support-icon icon-green">
-            <i class="fas fa-book-open-reader"></i>
+            <i class="fas fa-code"></i>
           </div>
-          <h4>Readability Support</h4>
+          <h4>2. REST API</h4>
           <p>
-            Structured headings, balanced spacing, and contrast-rich cards make the content easier to scan and present.
+            Orthanc offers a comprehensive RESTful API that returns data in <strong>JSON format</strong>,
+            allowing external applications to access and manage DICOM data programmatically.
+            The API runs on the same port as the web interface (default: <code>8042</code>)
+            and supports full CRUD operations on all DICOM resources.
+            <sup><a href="#ref-3" class="ref-link">[3]</a></sup>
           </p>
           <ul>
-            <li>Clear visual hierarchy</li>
-            <li>Comfortable text spacing</li>
-            <li>Readable summary blocks</li>
+            <li>เหมาะสำหรับการเชื่อมต่อกับระบบภายนอก</li>
+            <li>เข้าถึงและจัดการข้อมูลแบบโปรแกรมได้ ผ่าน JSON format</li>
+            <li>รองรับงาน integration และ automation</li>
+            <li>ตัวอย่าง endpoint: <code>GET /patients</code>, <code>GET /studies/{id}</code></li>
           </ul>
         </article>
 
-        <article class="support-card hover-card" data-support="visual">
+        <article class="support-card hover-card" data-support="dicom">
           <div class="support-icon icon-purple">
-            <i class="fas fa-wand-magic-sparkles"></i>
+            <i class="fas fa-network-wired"></i>
           </div>
-          <h4>Visual Support</h4>
+          <h4>3. DICOM Network Interface</h4>
           <p>
-            Icons, badges, gradients, and dashboard-style panels help users understand the purpose of each section quickly.
+            Orthanc supports the standard DICOM network protocol (DIMSE) for communication with imaging devices
+            such as CT, MRI, and PACS systems. It listens on port <code>4242</code> by default and supports
+            core DICOM services including C-STORE, C-FIND, C-MOVE, and C-ECHO.
+            <sup><a href="#ref-4" class="ref-link">[4]</a></sup>
           </p>
           <ul>
-            <li>Icon-based recognition</li>
-            <li>Status panels</li>
-            <li>Presentation-style emphasis</li>
-          </ul>
-        </article>
-
-        <article class="support-card hover-card" data-support="interaction">
-          <div class="support-icon icon-orange">
-            <i class="fas fa-computer-mouse"></i>
-          </div>
-          <h4>Interaction Support</h4>
-          <p>
-            Hover states, focused highlights, and smooth animation provide feedback so the interface feels responsive and alive.
-          </p>
-          <ul>
-            <li>Hover feedback</li>
-            <li>Animated reveal</li>
-            <li>Focused support highlight</li>
+            <li>สื่อสารกับอุปกรณ์ถ่ายภาพทางการแพทย์ตามมาตรฐาน DICOM</li>
+            <li>เชื่อมต่อกับ CT, MRI และ PACS ได้</li>
+            <li>รองรับ C-STORE, C-FIND, C-MOVE, C-ECHO</li>
+            <li>Default DICOM port: <code>4242</code></li>
           </ul>
         </article>
       </div>
@@ -176,71 +141,86 @@
 
     <section class="ui-showcase animate-on-scroll">
       <div class="section-heading compact">
-        <span class="section-kicker">Guided explanation</span>
-        <h3>How the interface supports the user during a presentation</h3>
+        <span class="section-kicker">Guided Explanation</span>
+        <h3>รายละเอียดของ Interfaces ที่รองรับ</h3>
       </div>
 
       <div class="showcase-layout">
-        <div class="showcase-tabs" role="tablist" aria-label="User interface support tabs">
+        <div class="showcase-tabs" role="tablist" aria-label="Orthanc interface tabs">
           <button class="showcase-tab active" data-target="panel-1" type="button">
-            <i class="fas fa-layer-group"></i>
-            Layout Guidance
+            <i class="fas fa-globe"></i>
+            Web Interface
           </button>
 
           <button class="showcase-tab" data-target="panel-2" type="button">
-            <i class="fas fa-circle-nodes"></i>
-            Content Flow
+            <i class="fas fa-code"></i>
+            REST API
           </button>
 
           <button class="showcase-tab" data-target="panel-3" type="button">
-            <i class="fas fa-sliders"></i>
-            User Feedback
+            <i class="fas fa-network-wired"></i>
+            DICOM Network
           </button>
         </div>
 
         <div class="showcase-panels">
           <article id="panel-1" class="showcase-panel active">
-            <span class="showcase-label">Layout Guidance</span>
-            <h4>Information is separated into visible, manageable sections.</h4>
+            <span class="showcase-label">Web Interface</span>
+            <h4>เข้าถึงข้อมูล DICOM ผ่านเว็บเบราว์เซอร์ได้โดยตรง</h4>
             <p>
-              The page is built like a polished presentation board: a large hero area introduces the topic,
-              support cards explain the core ideas, and an interactive showcase expands each concept clearly.
+              ผู้ใช้สามารถเปิดเว็บ Interface ของ Orthanc เพื่อเรียกดูผู้ป่วย การตรวจ ชุดภาพ และรายละเอียดของไฟล์ DICOM ได้สะดวก
+              เหมาะสำหรับการตรวจสอบข้อมูลเบื้องต้นและการดู metadata ในระบบ
+              โดย Orthanc จะเปิด web interface ที่ <code>http://localhost:8042</code> เป็นค่าเริ่มต้น
+              <sup><a href="#ref-2" class="ref-link">[2]</a></sup>
             </p>
 
             <div class="showcase-points">
-              <span><i class="fas fa-check"></i> Hero section for quick context</span>
-              <span><i class="fas fa-check"></i> Card layout for chunked reading</span>
-              <span><i class="fas fa-check"></i> Consistent spacing between groups</span>
+              <span><i class="fas fa-check"></i> ใช้งานผ่าน browser ไม่ต้องติดตั้งซอฟต์แวร์เพิ่ม</span>
+              <span><i class="fas fa-check"></i> ดูข้อมูลผู้ป่วยและการตรวจ</span>
+              <span><i class="fas fa-check"></i> ตรวจสอบ metadata ได้ทันที</span>
+              <span><i class="fas fa-check"></i> Default port: 8042</span>
             </div>
           </article>
 
           <article id="panel-2" class="showcase-panel">
-            <span class="showcase-label">Content Flow</span>
-            <h4>Users can understand the story of the website from top to bottom.</h4>
+            <span class="showcase-label">REST API</span>
+            <h4>เชื่อมต่อข้อมูลกับระบบอื่นได้แบบโปรแกรม</h4>
             <p>
-              Headings, short paragraphs, and highlighted keywords direct the audience through the content in a sequence
-              that supports both self-reading and live presentation.
+              REST API ของ Orthanc เหมาะสำหรับการพัฒนาแอปพลิเคชัน การทำ automation และการเชื่อมโยงระบบทางการแพทย์
+              ที่ต้องการเข้าถึงข้อมูล DICOM อย่างเป็นระบบ โดย API จะส่งข้อมูลในรูปแบบ JSON
+              และรองรับ HTTP methods ครบถ้วน (GET, POST, PUT, DELETE)
+              <sup><a href="#ref-3" class="ref-link">[3]</a></sup>
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9em; opacity: 0.85;">
+              ตัวอย่าง endpoints:
+              <code>GET /patients</code> — ดึงรายชื่อผู้ป่วยทั้งหมด |
+              <code>GET /studies/{id}/archive</code> — ดาวน์โหลด study เป็น ZIP |
+              <code>POST /instances</code> — อัปโหลด DICOM instance
             </p>
 
             <div class="showcase-points">
-              <span><i class="fas fa-check"></i> Strong headline hierarchy</span>
-              <span><i class="fas fa-check"></i> Summary-first writing style</span>
-              <span><i class="fas fa-check"></i> Easy talking points for presenter</span>
+              <span><i class="fas fa-check"></i> รองรับ integration กับระบบภายนอก</span>
+              <span><i class="fas fa-check"></i> ข้อมูลส่งกลับเป็น JSON format</span>
+              <span><i class="fas fa-check"></i> เหมาะกับงาน backend และ tools</span>
+              <span><i class="fas fa-check"></i> รองรับ GET, POST, PUT, DELETE</span>
             </div>
           </article>
 
           <article id="panel-3" class="showcase-panel">
-            <span class="showcase-label">User Feedback</span>
-            <h4>The interface reacts when users interact, reducing uncertainty.</h4>
+            <span class="showcase-label">DICOM Network Interface</span>
+            <h4>สื่อสารกับอุปกรณ์และระบบภาพทางการแพทย์ตามมาตรฐาน</h4>
             <p>
-              Buttons, tabs, and cards provide motion and state changes that tell users where to click,
-              what is selected, and which part of the interface is currently active.
+              Orthanc รองรับการสื่อสารผ่าน DICOM network protocol (DIMSE) ซึ่งเป็นมาตรฐานสำคัญในงาน medical imaging
+              ทำให้สามารถรับส่งข้อมูลกับเครื่องมือแพทย์และ PACS ได้ โดยรองรับ DICOM services หลัก ได้แก่
+              C-STORE (รับภาพ), C-FIND (ค้นหา), C-MOVE (ส่งภาพ) และ C-ECHO (ทดสอบการเชื่อมต่อ)
+              <sup><a href="#ref-4" class="ref-link">[4]</a></sup>
             </p>
 
             <div class="showcase-points">
-              <span><i class="fas fa-check"></i> Hover and active states</span>
-              <span><i class="fas fa-check"></i> Focused support mode</span>
-              <span><i class="fas fa-check"></i> Smooth transitions for clarity</span>
+              <span><i class="fas fa-check"></i> ใช้มาตรฐาน DICOM (DIMSE)</span>
+              <span><i class="fas fa-check"></i> เชื่อมต่อ CT, MRI, PACS</span>
+              <span><i class="fas fa-check"></i> รองรับ C-STORE, C-FIND, C-MOVE, C-ECHO</span>
+              <span><i class="fas fa-check"></i> Default DICOM port: 4242</span>
             </div>
           </article>
         </div>
@@ -254,38 +234,80 @@
           <i class="fas fa-file-waveform"></i>
         </div>
 
-        <h3>What this project page is meant to communicate</h3>
+        <h3>This page introduces the Orthanc DICOM server</h3>
         <p>
-          This web presentation introduces MicroDicom Viewer as a technical portfolio topic by explaining its architecture,
-          features, screenshots, and support design in a way that is visually professional and easy for viewers to follow.
+          เนื้อหาของหน้านี้มุ่งอธิบาย Orthanc ในฐานะ DICOM server และ medical image archive
+          โดยเน้นว่าระบบรองรับ Interfaces ใดบ้างสำหรับการเข้าถึงและจัดการข้อมูลภาพทางการแพทย์
         </p>
       </article>
 
       <article class="summary-card hover-card">
         <div class="summary-header">
-          <span class="section-kicker">Technology Stack</span>
+          <span class="section-kicker">Presentation Stack</span>
           <i class="fas fa-code"></i>
         </div>
 
-        <h3>Built for modular presentation</h3>
+        <h3>หน้าพรีเซนเทชันนี้สร้างด้วยเครื่องมือเว็บ</h3>
         <p>
-          HTML structures the content, Tailwind utility classes enhance layout speed, custom CSS refines style,
-          and JavaScript adds page loading, interaction, and interface highlighting behavior.
+          This presentation page is built with HTML, Tailwind CSS, and JavaScript.
+          เทคโนโลยีดังกล่าวเป็นส่วนของหน้าเว็บนำเสนอ ไม่ใช่เทคโนโลยีหลักของ Orthanc เอง
         </p>
       </article>
 
       <article class="summary-card hover-card emphasis-card">
         <div class="summary-header">
-          <span class="section-kicker">Presenter Note</span>
+          <span class="section-kicker">Key Focus</span>
           <i class="fas fa-microphone-lines"></i>
         </div>
 
-        <h3>Why this page works well in a live demo</h3>
+        <h3>ประเด็นสำคัญของหน้านี้</h3>
         <p>
-          The design is not only informative but also presentation-ready: it gives quick talking points,
-          strong visuals, and guided emphasis that help the presenter explain UI support with confidence.
+          เน้นการอธิบาย medical image browsing, DICOM data management และ medical image access
+          เพื่อให้เข้าใจบทบาทของ Orthanc ได้ถูกต้องตามโจทย์
         </p>
       </article>
+    </section>
+
+    <!-- References Section -->
+    <section class="references-section animate-on-scroll" style="margin-top: 3rem; padding: 2rem; border-top: 2px solid #e2e8f0;">
+      <div class="section-heading compact">
+        <span class="section-kicker">Sources</span>
+        <h3 style="font-size: 1.25rem;">แหล่งอ้างอิง (References)</h3>
+      </div>
+
+      <ol class="references-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+        <li id="ref-1" style="display: flex; gap: 0.75rem; font-size: 0.9rem; line-height: 1.6;">
+          <span style="font-weight: 700; min-width: 1.5rem;">[1]</span>
+          <span>
+            Jodogne, S. <em>Orthanc — Lightweight, RESTful DICOM server</em>. Orthanc Project. (2023).
+            Available at: <a href="https://www.orthanc-server.com" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">https://www.orthanc-server.com</a>
+          </span>
+        </li>
+
+        <li id="ref-2" style="display: flex; gap: 0.75rem; font-size: 0.9rem; line-height: 1.6;">
+          <span style="font-weight: 700; min-width: 1.5rem;">[2]</span>
+          <span>
+            Orthanc Project. <em>Orthanc Book: REST API &amp; Web Interface</em>.
+            Available at: <a href="https://book.orthanc-server.com/users/rest.html" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">https://book.orthanc-server.com/users/rest.html</a>
+          </span>
+        </li>
+
+        <li id="ref-3" style="display: flex; gap: 0.75rem; font-size: 0.9rem; line-height: 1.6;">
+          <span style="font-weight: 700; min-width: 1.5rem;">[3]</span>
+          <span>
+            Orthanc Project. <em>Orthanc Book: REST Cheatsheet</em>.
+            Available at: <a href="https://book.orthanc-server.com/users/rest-cheatsheet.html" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">https://book.orthanc-server.com/users/rest-cheatsheet.html</a>
+          </span>
+        </li>
+
+        <li id="ref-4" style="display: flex; gap: 0.75rem; font-size: 0.9rem; line-height: 1.6;">
+          <span style="font-weight: 700; min-width: 1.5rem;">[4]</span>
+          <span>
+            Orthanc Project. <em>Orthanc Book: DICOM Network — C-STORE, C-FIND, C-MOVE</em>.
+            Available at: <a href="https://book.orthanc-server.com/dicom-guide.html" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">https://book.orthanc-server.com/dicom-guide.html</a>
+          </span>
+        </li>
+      </ol>
     </section>
   </main>
 
