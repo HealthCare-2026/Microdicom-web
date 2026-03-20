@@ -17,12 +17,16 @@
 </head>
 
 <body class="min-h-screen bg-slate-50">
+
   <div id="header-container"></div>
   <div id="navbar-container"></div>
 
   <main class="max-w-7xl mx-auto px-6 py-14">
+
     <section class="text-center mb-14 animate-on-scroll">
-      <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-4">
+
+      <span
+        class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-4">
         Orthanc Server
       </span>
 
@@ -31,171 +35,291 @@
       </h2>
 
       <p class="text-slate-500 text-lg font-light mt-4 max-w-3xl mx-auto leading-8">
-        ฟีเจอร์สำคัญของ Orthanc DICOM Server สำหรับการจัดเก็บ จัดการ และเชื่อมต่อข้อมูลภาพทางการแพทย์
+        ฟีเจอร์หลักของ Orthanc DICOM Server ที่ใช้สำหรับเก็บ จัดการ และเชื่อมต่อข้อมูลภาพทางการแพทย์
       </p>
 
       <p class="text-center text-sm text-slate-400 mt-6">
-        Reference:
-        <a href="https://www.orthanc-server.com/" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline font-medium">
+        Source:
+        <a href="https://www.orthanc-server.com/" target="_blank"
+          class="text-blue-600 hover:text-blue-700 hover:underline font-medium">
           https://www.orthanc-server.com/
         </a>
       </p>
+
     </section>
 
+
     <section class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
+
 
       <div class="feature-card animate-on-scroll">
         <div class="feature-icon bg-blue-50 text-blue-600">
           <i class="fas fa-database"></i>
         </div>
+
         <h4 class="feature-title">DICOM Image Storage</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> จัดเก็บและจัดการภาพทางการแพทย์ในรูปแบบ DICOM</p>
-          <p><span class="feature-label">Description:</span> Orthanc สามารถทำหน้าที่เป็น DICOM Store หรือ Mini-PACS สำหรับเก็บภาพจากเครื่องมือแพทย์ เช่น CT, MRI และ X-Ray โดยไม่ต้องใช้ระบบ PACS ขนาดใหญ่</p>
-          <p><span class="feature-label">Example:</span> เครื่อง CT Scanner ส่งภาพสแกนของผู้ป่วยมายัง Orthanc เพื่อจัดเก็บและเรียกดูในภายหลัง</p>
+          <p><span class="feature-label">Feature:</span> การจัดเก็บภาพทางการแพทย์แบบ DICOM</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc สามารถทำหน้าที่เป็น DICOM storage หรือ Mini-PACS สำหรับเก็บภาพจากเครื่องมือทางการแพทย์ เช่น CT, MRI
+            หรือ X-Ray ช่วยให้สามารถจัดการและค้นหาภาพทางการแพทย์ได้ง่ายขึ้น
+          </p>
         </div>
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-violet-50 text-violet-600">
           <i class="fas fa-code"></i>
         </div>
+
         <h4 class="feature-title">RESTful API Integration</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> ควบคุมและดึงข้อมูลผ่าน REST API</p>
-          <p><span class="feature-label">Description:</span> Orthanc มี RESTful API ในตัว ช่วยให้นักพัฒนาสามารถเชื่อมต่อระบบอื่น เช่น AI, EMR หรือ Web Application เพื่อดึงข้อมูล DICOM และ metadata ในรูปแบบ JSON</p>
-          <p><span class="feature-label">Example:</span> ระบบ AI เรียก API ของ Orthanc เพื่อดึงภาพ X-Ray ไปวิเคราะห์โรคปอดอัตโนมัติ</p>
+          <p><span class="feature-label">Feature:</span> การเชื่อมต่อผ่าน REST API</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc มี REST API ในตัว ทำให้นักพัฒนาสามารถเชื่อมต่อระบบอื่น เช่น AI, EMR หรือ Web Application
+            เพื่อดึงข้อมูลภาพ DICOM และ metadata ไปใช้งานต่อได้ง่าย
+          </p>
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-emerald-50 text-emerald-600">
           <i class="fas fa-globe"></i>
         </div>
-        <h4 class="feature-title">Built-in Web Interface</h4>
+
+        <h4 class="feature-title">Orthanc Explorer (built-in web interface)</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> เข้าถึงและจัดการข้อมูลผ่าน Web Interface</p>
-          <p><span class="feature-label">Description:</span> Orthanc มีหน้าเว็บภายในระบบที่ช่วยให้ผู้ใช้สามารถค้นหา ดู และจัดการไฟล์ DICOM ผ่าน browser ได้โดยไม่ต้องติดตั้งโปรแกรมเพิ่มเติม</p>
-          <p><span class="feature-label">Example:</span> แพทย์สามารถเปิด browser แล้วค้นหาภาพ MRI ของผู้ป่วยจาก Orthanc ได้ทันที</p>
+
+          <p><span class="feature-label">Feature:</span> เว็บสำหรับจัดการข้อมูลในระบบ</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc มี Orthanc Explorer ซึ่งเป็นเว็บอินเตอร์เฟซที่มาพร้อมกับระบบ ผู้ใช้สามารถค้นหา ดู และจัดการไฟล์
+            DICOM ผ่านเว็บเบราว์เซอร์ได้ทันที โดยไม่ต้องติดตั้งโปรแกรมเพิ่มเติม
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-cyan-50 text-cyan-600">
           <i class="fas fa-puzzle-piece"></i>
         </div>
+
         <h4 class="feature-title">Plugin Extension System</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> ขยายความสามารถของระบบด้วย Plugin</p>
-          <p><span class="feature-label">Description:</span> Orthanc รองรับ plugin ที่ช่วยเพิ่มฟีเจอร์ เช่น Web viewer, DICOMweb support หรือ database backend ทำให้สามารถปรับแต่งระบบให้เหมาะกับการใช้งานได้</p>
-          <p><span class="feature-label">Example:</span> โรงพยาบาลติดตั้ง Web Viewer plugin เพื่อให้แพทย์ดูภาพ DICOM ผ่านเว็บได้</p>
+
+          <p><span class="feature-label">Feature:</span> เพิ่มความสามารถของระบบด้วย Plugin</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc รองรับ plugin เพื่อเพิ่มฟีเจอร์ใหม่ ๆ เช่น web viewer, DICOMweb หรือการเชื่อมต่อฐานข้อมูลอื่น ๆ
+            ทำให้สามารถปรับระบบให้เหมาะกับการใช้งานของแต่ละองค์กรได้
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-indigo-50 text-indigo-600">
           <i class="fas fa-network-wired"></i>
         </div>
+
         <h4 class="feature-title">DICOM Network Communication</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> รองรับการรับ-ส่งข้อมูลผ่าน DICOM Protocol</p>
-          <p><span class="feature-label">Description:</span> Orthanc รองรับคำสั่งสำคัญของ DICOM protocol เช่น C-Store, C-Find, C-Move และ C-Echo ทำให้สามารถเชื่อมต่อกับอุปกรณ์ทางการแพทย์ได้ตามมาตรฐาน</p>
-          <p><span class="feature-label">Example:</span> เครื่อง X-Ray ส่งภาพผู้ป่วยไปยัง Orthanc โดยอัตโนมัติผ่าน C-Store</p>
+
+          <p><span class="feature-label">Feature:</span> การสื่อสารผ่าน DICOM Protocol</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc รองรับคำสั่งหลักของ DICOM ได้แก่ C-STORE, C-FIND, C-MOVE, C-GET และ C-ECHO
+            ทำให้สามารถรับ-ส่งข้อมูลกับเครื่องมือแพทย์และระบบ PACS อื่น ๆ ได้ตามมาตรฐาน
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-rose-50 text-rose-500">
           <i class="fas fa-image"></i>
         </div>
+
         <h4 class="feature-title">DICOM to Image Conversion</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> แปลงภาพ DICOM เป็น PNG หรือ JPEG</p>
-          <p><span class="feature-label">Description:</span> Orthanc สามารถสร้างภาพ PNG หรือ JPEG จากไฟล์ DICOM ได้แบบ real-time ทำให้สามารถนำภาพไปแสดงในเว็บหรือแอปพลิเคชันทั่วไปได้ง่าย</p>
-          <p><span class="feature-label">Example:</span> ระบบเว็บโรงพยาบาลแสดงภาพ X-Ray ของผู้ป่วยเป็น PNG บนหน้าประวัติผู้ป่วย</p>
+
+          <p><span class="feature-label">Feature:</span> แปลง DICOM เป็น PNG หรือ JPEG</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc สามารถสร้างภาพ PNG หรือ JPEG จากไฟล์ DICOM ได้แบบ on-the-fly ผ่าน REST API
+            ทำให้สามารถนำภาพไปแสดงในเว็บหรือแอปพลิเคชันทั่วไปได้ง่าย
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-orange-50 text-orange-500">
           <i class="fas fa-cloud"></i>
         </div>
+
         <h4 class="feature-title">DICOMweb Support</h4>
+
         <div class="feature-body">
+
           <p><span class="feature-label">Feature:</span> รองรับมาตรฐาน DICOMweb</p>
-          <p><span class="feature-label">Description:</span> Orthanc รองรับ QIDO-RS, WADO-RS และ STOW-RS ผ่าน plugin ทำให้ระบบสามารถค้นหา อัปโหลด และดาวน์โหลดภาพ DICOM ผ่าน HTTP/HTTPS ได้</p>
-          <p><span class="feature-label">Example:</span> ระบบ Cloud PACS เชื่อมต่อกับ Orthanc ผ่าน WADO-RS เพื่อดึงภาพ MRI</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc รองรับมาตรฐาน DICOMweb เช่น QIDO-RS, WADO-RS และ STOW-RS ผ่าน plugin ทำให้สามารถค้นหา อัปโหลด
+            และดาวน์โหลดไฟล์ DICOM ผ่าน HTTP หรือ HTTPS ได้
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-pink-50 text-pink-600">
           <i class="fas fa-shield-alt"></i>
         </div>
+
         <h4 class="feature-title">Secure Data Transfer</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> รองรับการเข้ารหัสข้อมูลด้วย TLS</p>
-          <p><span class="feature-label">Description:</span> Orthanc รองรับ TLS encryption สำหรับการรับ-ส่งข้อมูล DICOM เพื่อเพิ่มความปลอดภัยของข้อมูลผู้ป่วยในเครือข่ายโรงพยาบาล</p>
-          <p><span class="feature-label">Example:</span> ภาพ MRI ถูกส่งจากเครื่องสแกนไปยัง Orthanc ผ่านการเชื่อมต่อที่เข้ารหัสด้วย TLS</p>
+
+          <p><span class="feature-label">Feature:</span> การสื่อสารแบบปลอดภัย</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc รองรับ HTTPS/TLS encryption เพื่อเพิ่มความปลอดภัยในการรับ-ส่งข้อมูลระหว่างระบบ
+            และช่วยปกป้องข้อมูลผู้ป่วยในเครือข่าย
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-emerald-50 text-emerald-600">
           <i class="fas fa-server"></i>
         </div>
+
         <h4 class="feature-title">Flexible Database Backend</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> รองรับฐานข้อมูลหลายประเภท</p>
-          <p><span class="feature-label">Description:</span> Orthanc ใช้ SQLite เป็นค่าเริ่มต้น และสามารถเปลี่ยนไปใช้ PostgreSQL หรือ MySQL ผ่าน plugin เพื่อรองรับระบบที่มีข้อมูลขนาดใหญ่ขึ้น</p>
-          <p><span class="feature-label">Example:</span> โรงพยาบาลขนาดใหญ่ใช้ PostgreSQL เพื่อจัดการข้อมูลภาพหลายล้านไฟล์</p>
+
+          <p><span class="feature-label">Feature:</span> รองรับฐานข้อมูลหลายแบบ</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc ใช้ SQLite เป็นค่าเริ่มต้น และสามารถเปลี่ยนไปใช้ PostgreSQL หรือ MySQL ผ่าน plugin
+            เพื่อรองรับระบบที่มีข้อมูลจำนวนมาก
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-sky-50 text-sky-600">
           <i class="fas fa-share-alt"></i>
         </div>
-        <h4 class="feature-title">Orthanc Peer Synchronization</h4>
+
+        <h4 class="feature-title">Orthanc Peers Communication</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> เชื่อมต่อหลาย Orthanc Server เข้าด้วยกัน</p>
-          <p><span class="feature-label">Description:</span> Orthanc สามารถเชื่อมต่อกับ Orthanc server อื่น ๆ เพื่อส่งและซิงค์ข้อมูลภาพทางการแพทย์ระหว่างระบบได้โดยตรง</p>
-          <p><span class="feature-label">Example:</span> โรงพยาบาลสาขาส่งภาพ CT Scan ไปยัง Orthanc ที่ศูนย์กลางของเครือโรงพยาบาล</p>
+
+          <p><span class="feature-label">Feature:</span> เชื่อมต่อ Orthanc หลายเครื่องเข้าด้วยกัน</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc สามารถตั้งค่า Orthanc server อื่น ๆ เป็น peers
+            เพื่อให้สามารถส่งและแลกเปลี่ยนข้อมูลภาพทางการแพทย์ระหว่างเซิร์ฟเวอร์หลายเครื่องได้
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-amber-50 text-amber-500">
           <i class="fas fa-desktop"></i>
         </div>
+
         <h4 class="feature-title">Cross-Platform Deployment</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> ใช้งานได้บนหลายระบบปฏิบัติการ</p>
-          <p><span class="feature-label">Description:</span> Orthanc สามารถติดตั้งได้บน Windows, Linux และ macOS รวมถึงรองรับ Docker เพื่อการ deploy ที่ง่ายและรวดเร็ว</p>
-          <p><span class="feature-label">Example:</span> ทีม IT ติดตั้ง Orthanc ผ่าน Docker บน server Linux ของโรงพยาบาล</p>
+
+          <p><span class="feature-label">Feature:</span> ใช้งานได้หลายระบบปฏิบัติการ</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc สามารถติดตั้งได้ทั้งบน Windows, Linux และ macOS รวมถึงสามารถ deploy ผ่าน Docker ได้
+            ทำให้ติดตั้งและจัดการระบบได้สะดวก
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="feature-card animate-on-scroll">
+
         <div class="feature-icon bg-teal-50 text-teal-600">
           <i class="fas fa-code-branch"></i>
         </div>
+
         <h4 class="feature-title">Open Source Platform</h4>
+
         <div class="feature-body">
-          <p><span class="feature-label">Feature:</span> ซอฟต์แวร์ Open Source สำหรับงานภาพทางการแพทย์</p>
-          <p><span class="feature-label">Description:</span> Orthanc เป็นซอฟต์แวร์ open source ที่สามารถนำไปใช้งาน ปรับแต่ง และพัฒนาต่อได้โดยไม่มีค่า license เหมาะทั้งสำหรับงานวิจัยและงานจริง</p>
-          <p><span class="feature-label">Example:</span> มหาวิทยาลัยนำ Orthanc ไปใช้เป็นระบบจัดเก็บภาพสำหรับงานวิจัยด้าน AI ทางการแพทย์</p>
+
+          <p><span class="feature-label">Feature:</span> ซอฟต์แวร์แบบ Open Source</p>
+
+          <p><span class="feature-label">Description:</span>
+            Orthanc ถูกเผยแพร่ภายใต้สัญญาอนุญาต GNU GPL v3 open-source license ผู้ใช้สามารถนำไปใช้งาน ปรับแต่ง
+            และพัฒนาต่อยอดได้ตามต้องการ
+          </p>
+
         </div>
+
       </div>
+
 
     </section>
   </main>
+
 
   <div id="footer-container"></div>
 
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script src="js/features.js"></script>
+
 </body>
 
 </html>
