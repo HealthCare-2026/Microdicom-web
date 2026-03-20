@@ -879,6 +879,8 @@ body::before {
   object-fit: contain;
 }
 
+
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1200px) {
   .hero-grid, .hero-grid-side-image { grid-template-columns: 1fr; }
@@ -912,4 +914,42 @@ body::before {
   .hero-tags span,
   .showcase-points span { width: 100%; justify-content: center; text-align: center; }
   .showcase-tab { flex: 1 1 100%; }
+}
+
+/* ─── REFERENCES ─── */
+.reference-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.reference-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(58, 91, 219, 0.22);
+  box-shadow: 0 14px 32px rgba(10, 18, 50, 0.09);
+  background: #ffffff;
+}
+
+.reference-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: var(--font-display);
+}
+
+.reference-url {
+  font-size: 0.82rem;
+  color: var(--blue);
+  opacity: 0.75;
+  word-break: break-word;
 }
