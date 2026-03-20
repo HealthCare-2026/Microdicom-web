@@ -25,11 +25,11 @@
     <!-- Section Title -->
     <section class="mb-16 text-center animate-on-scroll">
       <h3 class="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase">
-        Orthanc Architecture & Platforms
+        Orthanc Architecture
       </h3>
       <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mb-6"></div>
       <p class="text-gray-500 text-lg font-light max-w-3xl mx-auto">
-        Orthanc เป็น DICOM Server แบบ Open-source ที่ออกแบบมาให้มีขนาดเล็ก (Lightweight) 
+        Orthanc เป็น DICOM Server แบบ Open-source ที่ออกแบบมาให้มีขนาดเล็ก (Lightweight)
         และช่วยลดความซับซ้อนของมาตรฐาน DICOM ทำให้สามารถเชื่อมต่อกับระบบภาพทางการแพทย์ <br>
         และระบบสารสนเทศของโรงพยาบาลได้ง่ายขึ้น
       </p>
@@ -54,13 +54,14 @@
         </p>
 
         <p class="text-sm text-gray-600 mt-4">
-          ระบบใช้ <b>DCMTK Toolkit</b> สำหรับการ implement มาตรฐาน DICOM เช่น
+          Orthanc รองรับการทำงานตามมาตรฐาน DICOM network operations เช่น
         </p>
 
         <ul class="text-sm text-gray-600 mt-2 list-disc ml-4">
           <li>DICOM C-STORE (รับ/ส่งภาพ)</li>
           <li>DICOM C-FIND (ค้นหาข้อมูล)</li>
           <li>DICOM C-MOVE / C-GET (retrieve images)</li>
+          <li>DICOM C-ECHO (ตรวจสอบการเชื่อมต่อ)</li>
         </ul>
 
         <div class="bg-slate-50 p-5 rounded-xl border-l-4 border-blue-500 mt-6">
@@ -90,6 +91,7 @@
           Web Service ที่ใช้งานง่ายผ่าน HTTP
         </p>
 
+
         <p class="text-sm text-gray-600 mt-4">
           นักพัฒนาสามารถเข้าถึงข้อมูลภาพในรูปแบบ
           <b>JSON, PNG, JPEG หรือ DICOM</b>
@@ -102,8 +104,8 @@
         </ul>
 
         <p class="text-sm text-gray-600 mt-4">
-          API นี้ช่วยให้สามารถพัฒนาแอปพลิเคชันด้วยภาษา
-          <b>Python, JavaScript, Java, C#, PHP</b> ได้ง่าย
+          REST API นี้สามารถใช้งานได้จากทุกภาษาโปรแกรมที่รองรับ HTTP และ JSON 
+          <!-- เช่น <b>Python, JavaScript, Java, C#, PHP</b> -->
         </p>
       </div>
 
@@ -120,8 +122,9 @@
         </h4>
 
         <p class="text-sm text-gray-600 leading-relaxed">
-          Orthanc ใช้ <b>SQLite</b> เป็นค่าเริ่มต้นในการเก็บ metadata index
-          และเก็บไฟล์ภาพ DICOM ใน filesystem
+          Orthanc ใช้ <b>SQLite</b> ทำหน้าที่เป็น default database/index backend สำหรับจัดเก็บดัชนีและ metadata ของ
+          DICOM resources
+          ขณะที่ไฟล์ DICOM จริงถูกเก็บใน filesystem
         </p>
 
         <p class="text-sm text-gray-600 mt-4">
@@ -129,14 +132,15 @@
         </p>
 
         <ul class="text-sm text-gray-600 mt-2 list-disc ml-4">
-          <li>PostgreSQL</li>
-          <li>MySQL / MariaDB</li>
+          <li>PostgreSQL (official plugin)</li>
+          <li>MySQL (official plugin)</li>
           <li>Cloud storage backend</li>
         </ul>
 
         <p class="text-sm text-gray-600 mt-4">
           โครงสร้างนี้ช่วยให้ Orthanc สามารถ scale ได้ตั้งแต่
-          <b>small imaging lab จนไปถึง hospital PACS</b>
+          <b>small imaging lab จนไปถึง hospital PACS</b><br><br>
+          SQLite เหมาะสำหรับระบบขนาดเล็ก (ประมาณ ≤ 50,000 DICOM instances)
         </p>
       </div>
 
@@ -147,7 +151,6 @@
           class="w-14 h-14 bg-orange-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-orange-200">
           <i class="fas fa-puzzle-piece text-xl"></i>
         </div>
-
         <h4 class="text-xl font-black mb-4 text-gray-900 uppercase tracking-tighter">
           Plugin Architecture
         </h4>
@@ -163,17 +166,16 @@
 
         <ul class="text-sm text-gray-600 mt-2 list-disc ml-4">
           <li>DICOMweb plugin</li>
-          <li>Web Viewer (Orthanc Explorer)</li>
+          <li>Stone Web Viewer (official plugin)</li>
+          <li>Osimis Web Viewer</li>
           <li>PostgreSQL database plugin</li>
-          <li>AI / research integration plugins</li>
+          <li>Artificial intelligence plugins (e.g., TCIA plugin)</li>
         </ul>
 
         <p class="text-sm text-gray-600 mt-4">
           โครงสร้างนี้ทำให้ Orthanc สามารถปรับใช้ได้ใน
           <b>research, hospital PACS, AI imaging pipelines</b>
         </p>
-      </div>
-
     </section>
 
     <!-- Orthanc Architecture Section -->
@@ -181,56 +183,57 @@
 
       <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-<!-- Explanation -->
-<div class="max-w-xl">
+        <!-- Explanation -->
+        <div class="max-w-xl">
 
-  <h3 class="text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight uppercase leading-tight">
-    Orthanc System Architecture
-  </h3>
+          <h3 class="text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight uppercase leading-tight">
+            Orthanc System Architecture
+          </h3>
 
-  <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-    Orthanc เป็น <span class="text-blue-400 font-semibold">DICOM Server</span> 
-    ที่ถูกพัฒนาด้วยภาษา <b>C++</b> และออกแบบให้เป็นระบบที่มีขนาดเล็ก 
-    (<span class="italic">lightweight</span>) แต่สามารถขยายความสามารถได้ผ่าน 
-    <b>plugin ecosystem</b> ทำให้สามารถนำไปใช้งานได้ทั้งในระบบ PACS 
-    ของโรงพยาบาล งานวิจัยทางการแพทย์ และระบบ Medical Imaging
-  </p>
+          <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+            Orthanc เป็น <span class="text-blue-400 font-semibold">DICOM Server</span>
+            ที่ถูกพัฒนาด้วยภาษา <b>C++</b> และออกแบบให้เป็นระบบที่มีขนาดเล็ก
+            (<span class="italic">lightweight</span>) แต่สามารถขยายความสามารถได้ผ่าน
+            <b>plugin ecosystem</b> ทำให้สามารถนำไปใช้งานได้ทั้งในระบบ PACS
+            ของโรงพยาบาล งานวิจัยทางการแพทย์ และระบบ Medical Imaging
+          </p>
 
-  <ul class="space-y-5 text-gray-300 text-base leading-relaxed">
+          <ul class="space-y-5 text-gray-300 text-base leading-relaxed">
 
-    <li>
-      <span class="font-semibold text-white">Orthanc Core Server</span>
-      ทำหน้าที่เป็นศูนย์กลางในการจัดการ workflow ของข้อมูลภาพทางการแพทย์
-      และการสื่อสารระหว่างระบบ DICOM
-    </li>
+            <li>
+              <span class="font-semibold text-white">Orthanc Core Server</span>
+              ทำหน้าที่เป็นศูนย์กลางในการจัดการ workflow ของข้อมูลภาพทางการแพทย์
+              และการสื่อสารระหว่างระบบ DICOM
+            </li>
 
-    <li>
-      <span class="font-semibold text-white">DCMTK Toolkit</span>
-      ใช้สำหรับ implement DICOM protocol เช่น
-      <span class="text-blue-400">C-Store, C-Find และ C-Move</span>
-    </li>
+            <li>
+              <span class="font-semibold text-white">DICOM Networking Support</span>
+              รองรับ DICOM network operations เช่น <br>
+              <span class="text-blue-400">C-STORE, C-FIND, C-MOVE, C-Echo และ C-GET</span>
+            </li>
 
-    <li>
-      <span class="font-semibold text-white">Mongoose HTTP Server</span>
-      ให้บริการ REST API เพื่อให้ Web applications 
-      สามารถเข้าถึงข้อมูลภาพได้ผ่าน HTTP
-    </li>
+            <li>
+              <span class="font-semibold text-white">HTTP Server </span>
+              ให้บริการ REST API เพื่อให้ Web applications
+              สามารถเข้าถึงข้อมูลภาพได้ผ่าน HTTP
+            </li>
 
-    <li>
-      <span class="font-semibold text-white">SQLite</span>
-      ใช้เก็บ metadata index ของภาพ ในขณะที่ไฟล์ DICOM
-      จะถูกจัดเก็บไว้ใน filesystem
-    </li>
+            <li>
+              <span class="font-semibold text-white">SQLite</span>
+              ทำหน้าที่เป็น default database/index backend สำหรับจัดเก็บดัชนีและ metadata ของ DICOM resources
+              ขณะที่ไฟล์ DICOM จริงถูกเก็บใน filesystem
+            </li>
 
-    <li>
-      <span class="font-semibold text-white">Orthanc Explorer</span>
-      เป็น Web interface สำหรับดูภาพทางการแพทย์ผ่าน browser
-      โดยไม่ต้องติดตั้ง software เพิ่ม
-    </li>
+            <li>
+              <span class="font-semibold text-white">Orthanc Explorer</span>
+              เป็น built-in Web interface สำหรับดูภาพทางการแพทย์ผ่าน browser
+              โดยไม่ต้องติดตั้ง software เพิ่ม
+            </li>
 
-  </ul>
+          </ul>
 
-</div>
+        </div>
+
 
 
         <!-- Architecture Diagram -->
@@ -242,48 +245,58 @@
             </span>
           </div>
 
-          <div class="flex flex-col items-center space-y-6 w-full">
+          <div class="flex flex-col items-center space-y-8 w-full">
 
-            <!-- External Systems -->
-            <div class="w-full bg-slate-700 p-5 rounded-xl text-center text-sm border border-blue-400">
-              <div class="font-semibold">Imaging Modalities / PACS Client</div>
-              <div class="text-xs text-slate-300 mt-2">
-                DICOM C-Store • DICOM C-Find • DICOM C-Move
+            <!-- Client Layer (GREEN) -->
+            <div class="w-full bg-green-700 p-5 rounded-xl text-center text-sm font-semibold shadow">
+              Orthanc Explorer
+              <div class="text-xs text-green-200 mt-2">
+                Administrative Web UI (Built-in)
               </div>
             </div>
 
-            <div class="h-6 w-px border-l-2 border-dashed border-slate-500"></div>
+            <div class="text-green-400 text-sm">↓</div>
 
-            <!-- Orthanc Server -->
-            <div class="w-full bg-green-700 p-4 rounded-xl text-center text-sm font-semibold shadow-md">
-              Orthanc Server (C++)
+            <!-- REST API Layer (BLUE) -->
+            <div class="w-full bg-blue-700 p-5 rounded-xl text-center text-sm font-semibold shadow">
+              REST API Layer
+              <div class="text-xs text-blue-200 mt-2">
+                HTTP Server / JSON Interface
+              </div>
             </div>
 
-            <!-- Internal Components -->
+            <div class="text-blue-400 text-sm">↓</div>
+
+            <!-- Core Layer (PURPLE) -->
+            <div class="w-full bg-purple-700 p-5 rounded-xl text-center text-sm font-semibold shadow">
+              Orthanc Server (Core Engine - C++)
+            </div>
+
+            <!-- Internal Components (same PURPLE theme) -->
             <div class="grid grid-cols-2 gap-4 w-full">
 
-              <div class="bg-blue-700 p-4 rounded-lg text-center text-sm font-semibold shadow">
-                DCMTK
-                <div class="text-xs text-blue-200 mt-1">
-                  DICOM Protocol
+              <div class="bg-purple-400 p-4 rounded-lg text-center text-sm font-semibold shadow">
+                DICOM Networking
+                <div class="text-xs text-black-200 mt-1">
+                  C-STORE • C-FIND • C-MOVE • C-GET • C-Echo
                 </div>
               </div>
 
-              <div class="bg-blue-700 p-4 rounded-lg text-center text-sm font-semibold shadow">
-                Mongoose
-                <div class="text-xs text-blue-200 mt-1">
-                  HTTP Server
-                </div>
-              </div>
-
-              <div class="bg-purple-700 p-4 rounded-lg text-center text-sm font-semibold shadow">
-                SQLite
+              <div class="bg-purple-400 p-4 rounded-lg text-center text-sm font-semibold shadow">
+                SQLite / PostgreSQL / MySQL
                 <div class="text-xs text-purple-200 mt-1">
-                  Metadata Index
+                  Metadata Database
                 </div>
               </div>
 
-              <div class="bg-purple-700 p-4 rounded-lg text-center text-sm font-semibold shadow">
+              <div class="bg-purple-400 p-4 rounded-lg text-center text-sm font-semibold shadow">
+                Filesystem Storage
+                <div class="text-xs text-purple-200 mt-1">
+                  DICOM File Storage
+                </div>
+              </div>
+
+              <div class="bg-purple-400 p-4 rounded-lg text-center text-sm font-semibold shadow">
                 zLib
                 <div class="text-xs text-purple-200 mt-1">
                   Compression
@@ -292,37 +305,17 @@
 
             </div>
 
-            <!-- Orthanc Explorer -->
-            <div class="w-full bg-emerald-700 p-4 rounded-lg text-center text-sm font-semibold shadow">
-              Orthanc Explorer
-              <div class="text-xs text-emerald-200 mt-1">
-                Web UI (HTML5 / JavaScript)
-              </div>
-            </div>
-
-            <!-- Storage -->
-            <div class="w-full bg-pink-700 p-4 rounded-lg text-center text-sm font-semibold shadow">
-              Filesystem Storage
-              <div class="text-xs text-pink-200 mt-1">
-                DICOM File Storage
-              </div>
-            </div>
-
-            <div class="h-6 w-px border-l-2 border-dashed border-slate-500"></div>
-
-            <!-- Web Interface -->
-            <div class="w-full bg-slate-700 p-5 rounded-xl text-center text-sm border border-green-400">
-              <div class="font-semibold">Web Browsers / REST Clients</div>
+            <!-- External Systems (neutral but aligned) -->
+            <div class="w-full bg-slate-700 p-5 rounded-xl text-center text-sm border border-purple-400">
+              <div class="font-semibold">Imaging Modalities / PACS</div>
               <div class="text-xs text-slate-300 mt-2">
-                REST API Services
+                DICOM C-Store • C-Find • C-Move • C-Echo
               </div>
             </div>
 
           </div>
 
         </div>
-
-      </div>
 
     </section>
     <!-- Supported Platforms -->
@@ -336,9 +329,9 @@
         <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mb-6"></div>
 
         <p class="text-gray-500 text-lg font-light max-w-3xl mx-auto">
-          Orthanc สามารถติดตั้งและใช้งานได้บนหลายระบบปฏิบัติการ
-          ทำให้สามารถ deploy ได้ตั้งแต่เครื่อง server ขนาดเล็ก
-          ไปจนถึงระบบ cloud infrastructure
+          Orthanc รองรับการทำงานบนหลายระบบปฏิบัติการ โดยเน้นการใช้งานบน Windows และ Linux เป็นหลัก
+          ในขณะที่ macOS มักใช้สำหรับ development และ testing นอกจากนี้ Orthanc ยังรองรับ
+          DICOM networking workflow เช่น C-Echo, C-Store, C-Find และ C-Move
         </p>
       </div>
 
@@ -354,8 +347,8 @@
           <h4 class="font-bold text-lg mb-2">Windows</h4>
 
           <p class="text-sm text-gray-500">
-            Orthanc มี binary package สำหรับ Windows <br>
-            รองรับทั้ง 32-bit และ 64-bit
+            รองรับ Windows อย่างเป็นทางการ พร้อม binary package สำหรับใช้งานจริง
+            เหมาะสำหรับ deployment ใน environment ทั่วไป
           </p>
         </div>
 
@@ -369,8 +362,8 @@
           <h4 class="font-bold text-lg mb-2">Linux</h4>
 
           <p class="text-sm text-gray-500">
-            รองรับ Linux distributions <br>
-            หลายตัว เช่น Ubuntu, Debian, Fedora และ Arch Linux
+            เป็น platform หลักสำหรับ production รองรับหลาย distribution
+            เช่น Ubuntu, Debian และ Fedora เหมาะสำหรับ server และ cloud deployment
           </p>
         </div>
 
@@ -384,8 +377,8 @@
           <h4 class="font-bold text-lg mb-2">macOS</h4>
 
           <p class="text-sm text-gray-500">
-            สามารถ build และ run Orthanc บน macOS
-            สำหรับ development หรือ research
+            รองรับในลักษณะการ build จาก source code โดยใช้สำหรับ development
+            และ testing เป็นหลัก ไม่ใช่ production platform หลัก
           </p>
         </div>
 
@@ -399,8 +392,8 @@
           <h4 class="font-bold text-lg mb-2">Docker</h4>
 
           <p class="text-sm text-gray-500">
-            Orthanc มี official Docker images
-            สำหรับ deploy ใน cloud หรือ container environment
+            มี official Docker images สำหรับการ deploy แบบ containerized
+            รองรับการใช้งานบน cloud และ orchestration เช่น Kubernetes
           </p>
         </div>
 
@@ -408,33 +401,33 @@
 
     </section>
 
-<!-- Sources -->
-<section class="mt-16">
-  <h4 class="text-xl font-black text-gray-900 mb-6 uppercase">Sources</h4>
+    <!-- Sources -->
+    <section class="mt-16">
+      <h4 class="text-xl font-black text-gray-900 mb-6 uppercase">Sources</h4>
 
-  <div class="text-sm text-gray-500 max-w-3xl  leading-relaxed text-left">
-    <ol class="list-decimal ml-6 space-y-2">
-      <li>
-        Orthanc Official Book. Available at:
-        <a href="https://book.orthanc-server.com" class="text-blue-600 hover:underline">
-          https://book.orthanc-server.com
-        </a>
-      </li>
+      <div class="text-sm text-gray-500 max-w-3xl  leading-relaxed text-left">
+        <ol class="list-decimal ml-6 space-y-2">
+          <li>
+            Orthanc Official Book. Available at:
+            <a href="https://book.orthanc-server.com" class="text-blue-600 hover:underline">
+              https://book.orthanc-server.com
+            </a>
+          </li>
 
-      <li>
-        Orthanc Server Documentation. Available at:
-        <a href="https://orthanc-server.com" class="text-blue-600 hover:underline">
-          https://orthanc-server.com
-        </a>
-      </li>
+          <li>
+            Orthanc Server Documentation. Available at:
+            <a href="https://orthanc-server.com" class="text-blue-600 hover:underline">
+              https://orthanc-server.com
+            </a>
+          </li>
 
-      <li>
-        Jodogne, S. (2018). <i>The Orthanc Ecosystem for Medical Imaging.</i>
-        Journal of Digital Imaging.
-      </li>
-    </ol>
-  </div>
-</section>
+          <li>
+            Jodogne, S. (2018). <i>The Orthanc Ecosystem for Medical Imaging.</i>
+            Journal of Digital Imaging.
+          </li>
+        </ol>
+      </div>
+    </section>
 
   </main>
 

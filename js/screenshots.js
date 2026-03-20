@@ -2,7 +2,7 @@ const topics = [
   {
     id: 0,
     title: "ORTHANC OVERVIEW",
-    description: "Orthanc คือ DICOM Server ขนาดเล็กที่เน้นความเรียบง่าย แต่มีประสิทธิภาพสูง เหมาะสำหรับการทำ mini-PACS และการบริหารจัดการภาพทางการแพทย์ในระบบงานด้านสุขภาพ",
+    description: "ภาพนี้แสดงหน้าเว็บสำหรับเข้าถึงฟังก์ชันหลักของ Orthanc เช่นการค้นหา study และเปิดใช้งาน viewer / client ที่เชื่อมกับ Orthanc",
     images: [
       "images/op1.png"
     ]
@@ -10,7 +10,7 @@ const topics = [
   {
     id: 1,
     title: "WEB INTERFACE",
-    description: "Orthanc มี Web Interface สำหรับดูข้อมูลภาพทางการแพทย์ผ่าน browser โดยผู้ใช้สามารถเข้าดูข้อมูลในลำดับ Patient, Study และ Series รวมถึงเปิด preview ภาพ DICOM ได้ทันที",
+    description: "ภาพนี้แสดงการใช้งาน Orthanc Web Interface เพื่อ browse ข้อมูลตามลำดับ Patient → Study → Series → Instance และตรวจสอบ DICOM tags ของ instance ที่เลือก",
     images: [
       "images/op2.1.png",
       "images/op2.2.png",
@@ -25,13 +25,14 @@ const topics = [
     title: "UPLOAD / RECEIVE DICOM",
     description: "Orthanc รองรับการ upload และการรับไฟล์ DICOM เข้าสู่ระบบ เมื่อไฟล์ถูกนำเข้าแล้ว ระบบจะจัดเก็บและจัดโครงสร้างข้อมูลให้อยู่ในรูปแบบ Patient, Study และ Series โดยอัตโนมัติ",
     images: [
-      "images/op3.1.png"
+      "images/op3.1.png",
+      "images/op3.2.png"
     ]
   },
   {
     id: 3,
     title: "DICOM COMMUNICATION",
-    description: "Orthanc สามารถรับภาพจากอุปกรณ์ทางการแพทย์ เช่น X-ray, CT หรือ MRI ผ่าน DICOM protocol เช่น C-STORE ทำให้สามารถทำหน้าที่เป็น mini-PACS สำหรับรับและจัดเก็บภาพได้",
+    description: "Orthanc รองรับการสื่อสารผ่าน DICOM network protocol เพื่อค้นหาและดึงข้อมูลภาพทางการแพทย์จากระบบ PACS หรือ modality อื่น ๆในขั้นตอน Query/Retrieve ผู้ใช้สามารถค้นหา study จาก remote DICOM server โดยใช้เงื่อนไข เช่น Patient ID หรือ Study Description ผ่านคำสั่ง C-FIND จากนั้น Orthanc จะแสดงรายการ study และ series ที่พบเมื่อผู้ใช้เลือกข้อมูลที่ต้องการ ระบบจะใช้คำสั่ง C-MOVE เพื่อดึงไฟล์ DICOM จาก remote server กลับมายัง Orthanc server เพื่อจัดเก็บและใช้งานต่อไป",
     images: [
       "images/op4.1.png",
       "images/op4.2.png",
@@ -45,7 +46,7 @@ const topics = [
   {
     id: 4,
     title: "REST API",
-    description: "Orthanc มี REST API สำหรับให้นักพัฒนาสามารถดึงข้อมูลผู้ป่วย การตรวจ และข้อมูลภาพในรูปแบบ JSON ผ่าน endpoint เช่น /patients และ /studies เพื่อเชื่อมต่อกับระบบภายนอกได้สะดวก",
+    description: "ภาพนี้แสดงตัวอย่าง REST API ของ Orthanc ที่เรียก endpoint /patients เพื่อดึงรายการ Orthanc identifiers ของผู้ป่วยในระบบในรูปแบบ JSON จากนั้นสามารถเรียก endpoint รายตัวต่อเพื่อดูข้อมูลเชิงลึกได้",
     images: [
       "images/op5.1.png"
     ]
@@ -53,7 +54,7 @@ const topics = [
   {
     id: 5,
     title: "PLUGIN / INTEGRATION",
-    description: "Orthanc รองรับ plugin และการเชื่อมต่อกับ application ภายนอก เช่น DICOM viewer, DICOMweb และ AI analysis modules เพื่อขยายความสามารถของระบบให้เหมาะกับการใช้งานจริง",
+    description: "ภาพนี้แสดงการตั้งค่า DICOMweb plugin ของ Orthanc ซึ่งใช้เปิดใช้งานบริการ QIDO-RS, WADO-RS และ STOW-RS เพื่อให้ระบบภายนอกเข้าถึงข้อมูลภาพผ่านมาตรฐานเว็บได้",
     images: [
       "images/op6.1.png"
     ]
